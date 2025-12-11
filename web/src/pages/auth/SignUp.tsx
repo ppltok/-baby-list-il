@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { Mail, Lock, Eye, EyeOff, User, Gift } from 'lucide-react'
+import { Mail, Lock, Eye, EyeOff, User, Gift, ArrowLeft } from 'lucide-react'
 import { Button, Input, Card } from '../../components/ui'
 import { signUpWithEmail, signInWithGoogle } from '../../lib/supabase'
 
@@ -69,15 +69,15 @@ export function SignUp() {
 
   if (success) {
     return (
-      <div className="min-h-screen flex items-center justify-center p-6 bg-gradient-to-b from-white to-[var(--color-cream)]">
-        <Card variant="elevated" padding="lg" className="w-full max-w-md text-center shadow-xl shadow-[var(--color-primary)]/10">
-          <div className="w-20 h-20 bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent)]/70 rounded-3xl flex items-center justify-center mx-auto mb-6">
-            <Mail className="w-10 h-10 text-white" />
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center p-6">
+        <Card variant="elevated" padding="lg" className="w-full max-w-md text-center bg-white border border-gray-200 shadow-xl">
+          <div className="w-20 h-20 bg-teal-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <Mail className="w-10 h-10 text-teal-600" />
           </div>
-          <h1 className="text-3xl font-bold text-[var(--color-text-primary)] mb-3">
+          <h1 className="text-3xl font-bold text-gray-900 mb-3">
             {t('auth.emailSent')}
           </h1>
-          <p className="text-[var(--color-text-secondary)] mb-8 leading-relaxed">
+          <p className="text-gray-600 mb-8 leading-relaxed">
             We sent a confirmation link to <strong className="text-[var(--color-primary)]">{email}</strong>
           </p>
           <Link to="/auth/signin">
@@ -89,57 +89,35 @@ export function SignUp() {
   }
 
   return (
-    <div className="min-h-screen flex relative overflow-hidden">
-      {/* Left side - Decorative */}
-      <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-pink-dark)] relative">
-        {/* Decorative circles */}
-        <div className="absolute top-20 left-20 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-40 right-20 w-80 h-80 bg-[var(--color-accent)]/20 rounded-full blur-3xl" />
-
-        <div className="relative z-10 flex flex-col justify-center items-center w-full px-12 text-white">
-          <div className="w-20 h-20 bg-white/20 backdrop-blur-xl rounded-3xl flex items-center justify-center mb-8">
-            <Gift className="w-10 h-10 text-white" />
-          </div>
-          <h1 className="text-4xl font-bold mb-4 text-center">{t('app.name')}</h1>
-          <p className="text-xl text-white/80 text-center max-w-md mb-12">
-            {t('app.tagline')}
-          </p>
-
-          {/* Features */}
-          <div className="space-y-6 w-full max-w-md">
-            {[
-              { icon: '✅', text: t('home.features.items.noDuplicates') },
-              { icon: '🔗', text: t('home.features.items.sharing') },
-              { icon: '🎁', text: t('home.features.items.surprises') },
-            ].map((feature, i) => (
-              <div key={i} className="flex items-center gap-4 bg-white/10 backdrop-blur-xl rounded-2xl p-4">
-                <div className="text-3xl">{feature.icon}</div>
-                <p className="text-white/90 font-medium">{feature.text}</p>
-              </div>
-            ))}
-          </div>
+    <div className="min-h-screen bg-gray-50 flex flex-col">
+      {/* Header */}
+      <header className="bg-white border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+          <Link to="/" className="flex items-center gap-3 no-underline">
+            <div className="w-10 h-10 bg-[var(--color-primary)] rounded-xl flex items-center justify-center">
+              <Gift className="w-5 h-5 text-white" />
+            </div>
+            <span className="text-xl font-bold text-gray-900">{t('app.name')}</span>
+          </Link>
         </div>
-      </div>
+      </header>
 
-      {/* Right side - Form */}
-      <div className="flex-1 flex items-center justify-center p-6 bg-gradient-to-b from-white to-[var(--color-cream)] overflow-y-auto">
-        <div className="w-full max-w-md py-8">
-          {/* Mobile Logo */}
-          <div className="text-center mb-8 lg:hidden">
-            <Link to="/" className="inline-flex items-center gap-3 text-2xl font-bold text-[var(--color-primary)]">
-              <div className="w-12 h-12 bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent)] rounded-xl flex items-center justify-center">
-                <Gift className="w-6 h-6 text-white" />
-              </div>
-              <span>{t('app.name')}</span>
-            </Link>
-          </div>
+      {/* Main Content */}
+      <div className="flex-1 flex items-center justify-center p-6">
+        <div className="w-full max-w-md">
+          {/* Back link */}
+          <Link to="/" className="inline-flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 mb-8 transition-colors">
+            <ArrowLeft className="w-4 h-4" />
+            {t('common.back')} {t('navigation.home')}
+          </Link>
 
-          <Card variant="elevated" padding="lg" className="animate-slideUp shadow-xl shadow-[var(--color-primary)]/10">
+          {/* Card */}
+          <Card variant="elevated" padding="lg" className="bg-white border border-gray-200 shadow-xl">
             <div className="text-center mb-8">
-              <h1 className="text-3xl font-bold text-[var(--color-text-primary)] mb-2">
+              <h1 className="text-3xl font-bold text-gray-900 mb-2">
                 {t('auth.createAccount')}
               </h1>
-              <p className="text-[var(--color-text-secondary)]">
+              <p className="text-gray-600">
                 {t('auth.signUpSubtitle')}
               </p>
             </div>
@@ -150,7 +128,7 @@ export function SignUp() {
               fullWidth
               onClick={handleGoogleSignIn}
               isLoading={isGoogleLoading}
-              className="mb-6 h-12 border-2"
+              className="mb-6 h-12 border-2 border-gray-200 hover:border-gray-300 hover:bg-gray-50"
             >
               <svg className="w-5 h-5" viewBox="0 0 24 24">
                 <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
@@ -164,10 +142,10 @@ export function SignUp() {
             {/* Divider */}
             <div className="relative my-6">
               <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-[var(--color-border-light)]"></div>
+                <div className="w-full border-t border-gray-200"></div>
               </div>
               <div className="relative flex justify-center text-sm">
-                <span className="px-4 bg-white text-[var(--color-text-muted)]">
+                <span className="px-4 bg-white text-gray-500">
                   {t('common.or')}
                 </span>
               </div>
@@ -176,7 +154,7 @@ export function SignUp() {
             {/* Email Form */}
             <form onSubmit={handleEmailSignUp} className="space-y-5">
               {error && (
-                <div className="p-4 rounded-xl bg-red-50 border border-red-100 text-red-600 text-sm text-center">
+                <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-sm text-center">
                   {error}
                 </div>
               )}
@@ -230,7 +208,7 @@ export function SignUp() {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute end-4 top-[42px] text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors"
+                  className="absolute end-4 top-[42px] text-gray-400 hover:text-gray-600 transition-colors"
                 >
                   {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                 </button>
@@ -252,14 +230,14 @@ export function SignUp() {
                 variant="primary"
                 fullWidth
                 isLoading={isLoading}
-                className="h-12 shadow-lg shadow-[var(--color-primary)]/25"
+                className="h-12"
               >
                 {t('auth.createAccount')}
               </Button>
             </form>
 
             {/* Sign In Link */}
-            <p className="mt-8 text-center text-[var(--color-text-secondary)]">
+            <p className="mt-8 text-center text-gray-600">
               {t('auth.haveAccount')}{' '}
               <Link
                 to="/auth/signin"
@@ -269,13 +247,6 @@ export function SignUp() {
               </Link>
             </p>
           </Card>
-
-          {/* Back to home */}
-          <p className="mt-6 text-center">
-            <Link to="/" className="text-sm text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors">
-              ← {t('common.back')} {t('navigation.home')}
-            </Link>
-          </p>
         </div>
       </div>
     </div>
