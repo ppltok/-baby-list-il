@@ -1,0 +1,313 @@
+{
+  "home": {
+    "nav": {
+      "howItWorks": "איך זה עובד",
+      "features": "תכונות",
+      "testimonials": "המלצות"
+    },
+    "hero": {
+      "badge": "+3,000 הורים כבר השתמשו",
+      "titleLine1": "כל המתנות לתינוק",
+      "titleLine2": "במקום אחד",
+      "subtitle": "הרשימה האוניברסלית שמאפשרת לאסוף מוצרים מכל חנות, לשתף בקלות ולמנוע כפילויות. פשוט, נוח ויפה.",
+      "cta": "צרו רשימה חינם",
+      "secondaryCta": "מצאו רשימה",
+      "stats": {
+        "gifts": "מתנות נשלחו",
+        "satisfaction": "שביעות רצון",
+        "collected": "נאסף"
+      },
+      "floatingCard1": {
+        "title": "קיבלת מתנה!",
+        "subtitle": "דודה רחל קנתה עגלה"
+      },
+      "floatingCard2": {
+        "title": "80% הושלם",
+        "subtitle": "הרשימה כמעט מלאה!"
+      }
+    },
+    "phone": {
+      "greeting": "בוקר טוב, שרה",
+      "subGreeting": "שבוע ללידה",
+      "daysLeft": "ימים ללידה",
+      "weekTitle": "שבוע ללידה",
+      "date": "בפברואר 2025",
+      "week": "שבוע",
+      "items": "פריטים",
+      "purchased": "נקנו",
+      "remaining": "נשאר",
+      "myItems": "הפריטים שלי",
+      "available": "זמין",
+      "purchasedBadge": "נקנה",
+      "product1": "מיטת תינוק",
+      "product2": "עגלת תינוק"
+    },
+    "features": {
+      "label": "למה בייבי ליסט?",
+      "title": "הכל במקום אחד, בלי כאב ראש",
+      "subtitle": "אנחנו יודעים כמה הכנות ללידה יכולות להיות מלחיצות. בייבי ליסט מפשט את התהליך",
+      "items": {
+        "anyStore": "מכל חנות שתרצו",
+        "anyStoreDesc": "הוסיפו מוצרים מכל אתר או חנות בישראל. לא צריך להתפשר על מותג או מחיר",
+        "sharing": "שיתוף קל",
+        "sharingDesc": "שתפו את הרשימה בוואטסאפ, מייל או קבלו לינק ייחודי למשפחה וחברים",
+        "noDuplicates": "ללא כפילויות",
+        "noDuplicatesDesc": "מעקב אוטומטי על מה נקנה. לא תקבלו את אותה מתנה פעמיים",
+        "surprises": "הפתעות ובקרה",
+        "surprisesDesc": "בחרו אם לראות מי קנה מה, או לשמור את ההפתעה ללידה",
+        "app": "אפליקציה נוחה",
+        "appDesc": "ממשק יפה ופשוט בעברית. עובד מושלם בנייד ובמחשב",
+        "messages": "ברכות אישיות",
+        "messagesDesc": "הנותנים יכולים לצרף ברכה אישית לכל מתנה שהם שולחים"
+      }
+    },
+    "howItWorks": {
+      "label": "פשוט וקל",
+      "title": "איך זה עובד?",
+      "subtitle": "ב-4 צעדים פשוטים תהיה לכם רשימת מתנות מושלמת",
+      "steps": {
+        "1": {
+          "title": "צרו רשימה",
+          "description": "הירשמו בחינם ותנו שם לרשימה שלכם"
+        },
+        "2": {
+          "title": "הוסיפו מוצרים",
+          "description": "הוסיפו פריטים מכל חנות או אתר בישראל"
+        },
+        "3": {
+          "title": "שתפו עם כולם",
+          "description": "שלחו את הלינק למשפחה וחברים"
+        },
+        "4": {
+          "title": "קבלו מתנות 🎉",
+          "description": "תהנו מהמתנות שמגיעות אליכם הביתה"
+        }
+      }
+    },
+    "testimonials": {
+      "label": "מה אומרים עלינו",
+      "title": "הורים מרוצים",
+      "subtitle": "אלפי משפחות כבר השתמשו בבייבי ליסט",
+      "items": {
+        "1": {
+          "text": "השירות הכי נוח שהשתמשתי בו! חסך לי המון זמן ועצבים. כולם ידעו בדיוק מה לקנות לנו",
+          "name": "מיכל כהן",
+          "role": "אמא לתאומים"
+        },
+        "2": {
+          "text": "פשוט גאוני! הממשק כל כך פשוט שגם סבתא שלי הצליחה לקנות לנו מתנה דרך האפליקציה",
+          "name": "יוסי לוי",
+          "role": "אבא טרי"
+        },
+        "3": {
+          "text": "קיבלנו בדיוק את מה שרצינו, בלי כפילויות ובלי מתנות מיותרות. ממליצה בחום!",
+          "name": "נועה ברק",
+          "role": "אמא לילד שני"
+        }
+      }
+    },
+    "cta": {
+      "title": "מוכנים להתחיל?",
+      "subtitle": "צרו את רשימת המתנות שלכם עכשיו - זה בחינם ולוקח פחות מדקה",
+      "findRegistry": "מצאו רשימה קיימת",
+      "note": "חינם לנצח. בלי כרטיס אשראי. בלי התחייבות."
+    },
+    "footer": {
+      "description": "הפלטפורמה המובילה בישראל ליצירת רשימות מתנות לתינוקות. אנחנו עוזרים להורים לעתיד לארגן את ההכנות ללידה בצורה פשוטה ונעימה.",
+      "product": "מוצר",
+      "createRegistry": "צרו רשימה",
+      "findRegistry": "מצאו רשימה",
+      "howItWorks": "איך זה עובד",
+      "company": "חברה",
+      "blog": "בלוג",
+      "contact": "צור קשר",
+      "legal": "משפטי",
+      "accessibility": "נגישות",
+      "rights": "כל הזכויות שמורות."
+    }
+  },
+  "common": {
+    "save": "שמור",
+    "cancel": "ביטול",
+    "continue": "המשך",
+    "back": "חזרה",
+    "skip": "דלג",
+    "loading": "טוען...",
+    "error": "אירעה שגיאה",
+    "success": "הצלחה!",
+    "or": "או",
+    "and": "ו",
+    "yes": "כן",
+    "no": "לא",
+    "required": "חובה",
+    "optional": "אופציונלי"
+  },
+  "app": {
+    "name": "בייבי ליסט ישראל",
+    "tagline": "כל המתנות לתינוק במקום אחד"
+  },
+  "auth": {
+    "signIn": "התחברות",
+    "signUp": "הרשמה",
+    "signOut": "התנתקות",
+    "email": "כתובת אימייל",
+    "password": "סיסמה",
+    "confirmPassword": "אישור סיסמה",
+    "firstName": "שם פרטי",
+    "lastName": "שם משפחה",
+    "forgotPassword": "שכחת סיסמה?",
+    "resetPassword": "איפוס סיסמה",
+    "googleSignIn": "המשך עם Google",
+    "noAccount": "אין לך חשבון?",
+    "haveAccount": "יש לך כבר חשבון?",
+    "createAccount": "צור חשבון",
+    "welcomeBack": "ברוכים השבים",
+    "signInSubtitle": "התחבר לניהול רשימת התינוק שלך",
+    "signUpSubtitle": "צור רשימת מתנות לתינוק תוך דקות",
+    "emailSent": "בדוק את האימייל שלך לקישור האישור",
+    "passwordReset": "נשלח אימייל לאיפוס הסיסמה",
+    "errors": {
+      "invalidCredentials": "אימייל או סיסמה לא נכונים",
+      "emailInUse": "האימייל הזה כבר רשום",
+      "weakPassword": "הסיסמה חייבת להכיל לפחות 8 תווים",
+      "passwordMismatch": "הסיסמאות לא תואמות",
+      "generic": "משהו השתבש. נסה שוב."
+    }
+  },
+  "onboarding": {
+    "welcome": "ברוכים הבאים לבייבי ליסט ישראל!",
+    "letsGetStarted": "בואו נתאים את החוויה עבורך",
+    "question1": {
+      "title": "מתי תאריך הלידה המשוער?",
+      "subtitle": "זה עוזר לנו להציג תוכן רלוונטי",
+      "notSure": "אני לא בטוח/ה עדיין"
+    },
+    "question2": {
+      "title": "זו ההריון הראשון שלך?",
+      "subtitle": "נתאים טיפים והמלצות בהתאם"
+    },
+    "question3": {
+      "title": "איך את/ה מרגיש/ה לגבי כל עניין הרשימה הזה?",
+      "subtitle": "תהיו כנים - אנחנו כאן לעזור!",
+      "excited": "כל כך מתרגשים! 🎉",
+      "overwhelmed": "קצת מוצפים 😅",
+      "exploring": "רק מסתכלים 🔍"
+    },
+    "complete": "בואו נתחיל!"
+  },
+  "registry": {
+    "myRegistry": "הרשימה שלי",
+    "createRegistry": "צור רשימה",
+    "shareRegistry": "שתף רשימה",
+    "addItem": "הוסף פריט",
+    "noItems": "אין פריטים עדיין",
+    "noItemsHint": "התקן את התוסף לדפדפן כדי להתחיל להוסיף פריטים מכל חנות!",
+    "installExtension": "התקן תוסף",
+    "publicLink": "קישור ציבורי",
+    "copyLink": "העתק קישור",
+    "linkCopied": "הקישור הועתק!",
+    "settings": "הגדרות רשימה",
+    "title": "שם הרשימה",
+    "description": "תיאור"
+  },
+  "address": {
+    "title": "כתובת למשלוח",
+    "subtitle": "לאן לשלוח את המתנות?",
+    "street": "רחוב ומספר",
+    "apt": "דירה/כניסה",
+    "city": "עיר",
+    "postal": "מיקוד",
+    "phone": "מספר טלפון",
+    "privacy": {
+      "title": "פרטיות כתובת",
+      "private": "שמור את הכתובת שלי פרטית",
+      "privateHint": "נותני מתנות יצטרכו ליצור איתך קשר לקבלת הכתובת",
+      "public": "הצג כתובת לנותני מתנות",
+      "publicHint": "נותני מתנות יכולים לשלוח ישירות אליך"
+    }
+  },
+  "partner": {
+    "invite": "הזמן שותף/ה",
+    "inviteSubtitle": "הוסף שותף/ה לעזור בניהול הרשימה",
+    "firstName": "שם פרטי של השותף/ה",
+    "lastName": "שם משפחה של השותף/ה",
+    "email": "אימייל של השותף/ה",
+    "sendInvite": "שלח הזמנה",
+    "inviteSent": "ההזמנה נשלחה!",
+    "skipForNow": "דלג לעכשיו"
+  },
+  "categories": {
+    "feeding": "האכלה",
+    "sleeping": "שינה",
+    "diapering": "החתלה",
+    "baby_gear": "ציוד תינוק",
+    "health_safety": "בריאות ובטיחות",
+    "bathing": "רחצה",
+    "nursery_decor": "חדר תינוק ועיצוב",
+    "clothing": "ביגוד",
+    "playing": "משחק"
+  },
+  "items": {
+    "available": "זמין",
+    "purchased": "נקנה",
+    "reserved": "שמור",
+    "mostWanted": "הכי רוצים",
+    "private": "פרטי",
+    "quantity": "כמות",
+    "needed": "נדרש",
+    "received": "התקבל",
+    "notes": "הערות לנותני מתנות",
+    "edit": "ערוך פריט",
+    "delete": "מחק פריט",
+    "markMostWanted": "סמן כהכי רצוי",
+    "markPrivate": "הפוך לפרטי"
+  },
+  "purchase": {
+    "buyThisGift": "קנה מתנה זו",
+    "headingTo": "את/ה בדרך ל-{{store}}...",
+    "rememberToReturn": "אחרי הרכישה, חזור לכאן ולחץ 'קניתי את זה'",
+    "needAddress": "צריך את הכתובת של {{name}}?",
+    "contactForAddress": "צור קשר עם {{name}} לפרטי משלוח",
+    "continueTo": "המשך ל-{{store}}",
+    "recordPurchase": "קניתי את זה",
+    "yourName": "השם שלך",
+    "yourEmail": "כתובת אימייל",
+    "giftMessage": "הודעה למתנה (אופציונלי)",
+    "keepSurprise": "שמור את המתנה בהפתעה",
+    "surpriseHint": "בעל/ת הרשימה לא יראה את השם שלך עד שהמתנה תגיע",
+    "anonymous": "תן באנונימיות",
+    "anonymousHint": "השם שלך לא יוצג לבעל/ת הרשימה",
+    "marketingOptIn": "שלחו לי רעיונות למתנות ומבצעים מבייבי ליסט",
+    "giftRecorded": "המתנה שלך נרשמה!",
+    "thankYou": "תודה על הנדיבות!",
+    "confirmationEmail": "נשלח לך אימייל אישור בעוד 3 שעות",
+    "printCard": "הדפס כרטיס ברכה"
+  },
+  "dashboard": {
+    "welcome": "שלום, {{name}}!",
+    "dueIn": "{{days}} ימים עד תאריך הלידה",
+    "activity": "פעילות אחרונה",
+    "noActivity": "אין פעילות עדיין",
+    "stats": {
+      "totalItems": "סה״כ פריטים",
+      "purchased": "נקנו",
+      "remaining": "שווי שנותר"
+    },
+    "progress": "התקדמות הרשימה",
+    "giftReceived": "{{name}} קנה לך את ה{{item}}!",
+    "giftReserved": "{{name}} שמר את ה{{item}}"
+  },
+  "navigation": {
+    "home": "בית",
+    "items": "פריטים",
+    "activity": "פעילות",
+    "profile": "פרופיל",
+    "settings": "הגדרות"
+  },
+  "footer": {
+    "about": "אודות",
+    "help": "עזרה",
+    "privacy": "פרטיות",
+    "terms": "תנאים"
+  }
+}

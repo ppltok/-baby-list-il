@@ -1,0 +1,313 @@
+{
+  "home": {
+    "nav": {
+      "howItWorks": "How It Works",
+      "features": "Features",
+      "testimonials": "Testimonials"
+    },
+    "hero": {
+      "badge": "+3,000 parents already using",
+      "titleLine1": "All baby gifts",
+      "titleLine2": "in one place",
+      "subtitle": "The universal registry that lets you collect products from any store, share easily, and prevent duplicates. Simple, convenient, and beautiful.",
+      "cta": "Create Free Registry",
+      "secondaryCta": "Find a Registry",
+      "stats": {
+        "gifts": "gifts sent",
+        "satisfaction": "satisfaction",
+        "collected": "collected"
+      },
+      "floatingCard1": {
+        "title": "You got a gift!",
+        "subtitle": "Aunt Rachel bought a stroller"
+      },
+      "floatingCard2": {
+        "title": "80% complete",
+        "subtitle": "Registry almost full!"
+      }
+    },
+    "phone": {
+      "greeting": "Good morning, Sarah",
+      "subGreeting": "Week to delivery",
+      "daysLeft": "days left",
+      "weekTitle": "Week to delivery",
+      "date": "February 2025",
+      "week": "week",
+      "items": "items",
+      "purchased": "purchased",
+      "remaining": "remaining",
+      "myItems": "My Items",
+      "available": "Available",
+      "purchasedBadge": "Purchased",
+      "product1": "Baby Crib",
+      "product2": "Stroller"
+    },
+    "features": {
+      "label": "Why BabyList?",
+      "title": "Everything in one place, hassle-free",
+      "subtitle": "We know how stressful baby preparations can be. BabyList simplifies the process",
+      "items": {
+        "anyStore": "From any store you want",
+        "anyStoreDesc": "Add products from any website or store in Israel. No need to compromise on brand or price",
+        "sharing": "Easy sharing",
+        "sharingDesc": "Share your registry via WhatsApp, email, or get a unique link for family and friends",
+        "noDuplicates": "No duplicates",
+        "noDuplicatesDesc": "Automatic tracking of what's been purchased. You won't receive the same gift twice",
+        "surprises": "Surprises & control",
+        "surprisesDesc": "Choose whether to see who bought what, or keep the surprise until delivery",
+        "app": "Convenient app",
+        "appDesc": "Beautiful and simple interface in Hebrew. Works perfectly on mobile and desktop",
+        "messages": "Personal messages",
+        "messagesDesc": "Gift givers can attach a personal message to every gift they send"
+      }
+    },
+    "howItWorks": {
+      "label": "Simple & Easy",
+      "title": "How does it work?",
+      "subtitle": "In 4 simple steps you'll have a perfect gift registry",
+      "steps": {
+        "1": {
+          "title": "Create a registry",
+          "description": "Sign up for free and name your registry"
+        },
+        "2": {
+          "title": "Add products",
+          "description": "Add items from any store or website in Israel"
+        },
+        "3": {
+          "title": "Share with everyone",
+          "description": "Send the link to family and friends"
+        },
+        "4": {
+          "title": "Receive gifts 🎉",
+          "description": "Enjoy the gifts arriving at your home"
+        }
+      }
+    },
+    "testimonials": {
+      "label": "What people say",
+      "title": "Happy parents",
+      "subtitle": "Thousands of families have already used BabyList",
+      "items": {
+        "1": {
+          "text": "The most convenient service I've used! Saved me tons of time and stress. Everyone knew exactly what to buy us",
+          "name": "Michal Cohen",
+          "role": "Mom of twins"
+        },
+        "2": {
+          "text": "Simply genius! The interface is so simple that even my grandmother managed to buy us a gift through the app",
+          "name": "Yossi Levi",
+          "role": "New dad"
+        },
+        "3": {
+          "text": "We got exactly what we wanted, without duplicates and without unnecessary gifts. Highly recommend!",
+          "name": "Noa Barak",
+          "role": "Second-time mom"
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to start?",
+      "subtitle": "Create your gift registry now - it's free and takes less than a minute",
+      "findRegistry": "Find existing registry",
+      "note": "Free forever. No credit card. No commitment."
+    },
+    "footer": {
+      "description": "The leading platform in Israel for creating baby gift registries. We help expecting parents organize their preparations in a simple and pleasant way.",
+      "product": "Product",
+      "createRegistry": "Create Registry",
+      "findRegistry": "Find Registry",
+      "howItWorks": "How It Works",
+      "company": "Company",
+      "blog": "Blog",
+      "contact": "Contact",
+      "legal": "Legal",
+      "accessibility": "Accessibility",
+      "rights": "All rights reserved."
+    }
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "continue": "Continue",
+    "back": "Back",
+    "skip": "Skip",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success!",
+    "or": "or",
+    "and": "and",
+    "yes": "Yes",
+    "no": "No",
+    "required": "Required",
+    "optional": "Optional"
+  },
+  "app": {
+    "name": "BabyList Israel",
+    "tagline": "All baby gifts in one place"
+  },
+  "auth": {
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "signOut": "Sign Out",
+    "email": "Email Address",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "forgotPassword": "Forgot Password?",
+    "resetPassword": "Reset Password",
+    "googleSignIn": "Continue with Google",
+    "noAccount": "Don't have an account?",
+    "haveAccount": "Already have an account?",
+    "createAccount": "Create Account",
+    "welcomeBack": "Welcome Back",
+    "signInSubtitle": "Sign in to manage your baby registry",
+    "signUpSubtitle": "Create your baby registry in minutes",
+    "emailSent": "Check your email for the confirmation link",
+    "passwordReset": "Password reset email sent",
+    "errors": {
+      "invalidCredentials": "Invalid email or password",
+      "emailInUse": "This email is already registered",
+      "weakPassword": "Password must be at least 8 characters",
+      "passwordMismatch": "Passwords do not match",
+      "generic": "Something went wrong. Please try again."
+    }
+  },
+  "onboarding": {
+    "welcome": "Welcome to BabyList Israel!",
+    "letsGetStarted": "Let's personalize your experience",
+    "question1": {
+      "title": "When is the due date?",
+      "subtitle": "This helps us show you relevant content",
+      "notSure": "I'm not sure yet"
+    },
+    "question2": {
+      "title": "Are you a first-time parent?",
+      "subtitle": "We'll adjust tips and recommendations accordingly"
+    },
+    "question3": {
+      "title": "How are you feeling about this registry thing?",
+      "subtitle": "Be honest - we're here to help!",
+      "excited": "So excited!",
+      "overwhelmed": "A bit overwhelmed",
+      "exploring": "Just exploring"
+    },
+    "complete": "Let's get started!"
+  },
+  "registry": {
+    "myRegistry": "My Registry",
+    "createRegistry": "Create Registry",
+    "shareRegistry": "Share Registry",
+    "addItem": "Add Item",
+    "noItems": "No items yet",
+    "noItemsHint": "Install the browser extension to start adding items from any store!",
+    "installExtension": "Install Extension",
+    "publicLink": "Public Link",
+    "copyLink": "Copy Link",
+    "linkCopied": "Link copied!",
+    "settings": "Registry Settings",
+    "title": "Registry Title",
+    "description": "Description"
+  },
+  "address": {
+    "title": "Delivery Address",
+    "subtitle": "Where should gifts be delivered?",
+    "street": "Street Address",
+    "apt": "Apartment/Suite",
+    "city": "City",
+    "postal": "Postal Code",
+    "phone": "Phone Number",
+    "privacy": {
+      "title": "Address Privacy",
+      "private": "Keep my address private",
+      "privateHint": "Gift givers will need to contact you for the address",
+      "public": "Show address to gift givers",
+      "publicHint": "Gift givers can ship directly to you"
+    }
+  },
+  "partner": {
+    "invite": "Invite Partner",
+    "inviteSubtitle": "Add a partner to help manage your registry",
+    "firstName": "Partner's First Name",
+    "lastName": "Partner's Last Name",
+    "email": "Partner's Email",
+    "sendInvite": "Send Invitation",
+    "inviteSent": "Invitation sent!",
+    "skipForNow": "Skip for now"
+  },
+  "categories": {
+    "feeding": "Feeding",
+    "sleeping": "Sleeping",
+    "diapering": "Diapering",
+    "baby_gear": "Baby Gear",
+    "health_safety": "Health & Safety",
+    "bathing": "Bathing",
+    "nursery_decor": "Nursery & Decor",
+    "clothing": "Clothing",
+    "playing": "Playing"
+  },
+  "items": {
+    "available": "Available",
+    "purchased": "Purchased",
+    "reserved": "Reserved",
+    "mostWanted": "Most Wanted",
+    "private": "Private",
+    "quantity": "Quantity",
+    "needed": "needed",
+    "received": "received",
+    "notes": "Notes for gift givers",
+    "edit": "Edit Item",
+    "delete": "Delete Item",
+    "markMostWanted": "Mark as Most Wanted",
+    "markPrivate": "Make Private"
+  },
+  "purchase": {
+    "buyThisGift": "Buy This Gift",
+    "headingTo": "You're headed to {{store}}...",
+    "rememberToReturn": "After purchase, return here and click 'I've Purchased This'",
+    "needAddress": "Need {{name}}'s shipping address?",
+    "contactForAddress": "Contact {{name}} for shipping details",
+    "continueTo": "Continue to {{store}}",
+    "recordPurchase": "I've Purchased This",
+    "yourName": "Your Name",
+    "yourEmail": "Email Address",
+    "giftMessage": "Gift Message (optional)",
+    "keepSurprise": "Keep this gift a surprise",
+    "surpriseHint": "The registry owner won't see your name until the gift arrives",
+    "anonymous": "Give anonymously",
+    "anonymousHint": "Your name won't be shown to the registry owner",
+    "marketingOptIn": "Send me gift ideas and deals from BabyList Israel",
+    "giftRecorded": "Your gift was recorded!",
+    "thankYou": "Thank you for your generosity!",
+    "confirmationEmail": "We'll send you a confirmation email in 3 hours",
+    "printCard": "Print Gift Card"
+  },
+  "dashboard": {
+    "welcome": "Welcome, {{name}}!",
+    "dueIn": "{{days}} days until due date",
+    "activity": "Recent Activity",
+    "noActivity": "No activity yet",
+    "stats": {
+      "totalItems": "Total Items",
+      "purchased": "Purchased",
+      "remaining": "Remaining Value"
+    },
+    "progress": "Registry Progress",
+    "giftReceived": "{{name}} bought you the {{item}}!",
+    "giftReserved": "{{name}} reserved the {{item}}"
+  },
+  "navigation": {
+    "home": "Home",
+    "items": "Items",
+    "activity": "Activity",
+    "profile": "Profile",
+    "settings": "Settings"
+  },
+  "footer": {
+    "about": "About",
+    "help": "Help",
+    "privacy": "Privacy",
+    "terms": "Terms"
+  }
+}
