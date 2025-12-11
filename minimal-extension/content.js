@@ -10,6 +10,13 @@
 (async function() {
   console.log('🚀 Babylist API Tester - Starting...');
 
+  // Remove any existing modal/backdrop from previous runs
+  const existingBackdrop = document.getElementById('product-scraper-backdrop');
+  if (existingBackdrop) {
+    console.log('♻️ Removing existing modal...');
+    existingBackdrop.remove();
+  }
+
   try {
     // STEP 1: Get the current page URL
     const currentPageUrl = window.location.href;
