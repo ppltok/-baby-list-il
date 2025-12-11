@@ -771,10 +771,114 @@ function setupEventHandlers(modal, backdrop, state) {
     notesCounter.textContent = e.target.value.length;
   });
 
-  // Export button handler (will be enhanced in Phase 3)
+  // Export button handler (with validation - Phase 2)
   modal.querySelector('#export-btn').addEventListener('click', () => {
     console.log('📤 Export clicked - Current state:', state);
-    // TODO: Add validation and export in Phase 2 & 3
-    alert('Export functionality coming in Phase 3!\n\nCurrent data:\n' + JSON.stringify(state.formData, null, 2));
+
+    // Validate form data before export
+    const errors = validateFormData(state.formData, state.images);
+    if (showValidationErrors(errors, modal)) {
+      console.log('❌ Validation failed:', errors);
+      return; // Has errors, don't proceed
+    }
+
+    // TODO: Export functionality in Phase 3
+    console.log('✅ Validation passed!');
+    alert('Validation successful!\n\nExport functionality coming in Phase 3!\n\nCurrent data:\n' + JSON.stringify(state.formData, null, 2));
   });
+}
+
+/**
+ * FORM VALIDATION - Phase 2 Implementation
+ * ==========================================
+ */
+
+/**
+ * Validate form data before export
+ * @param {Object} formData - Form data to validate
+ * @param {Array} images - Array of image URLs
+ * @returns {Array} - Array of error messages (empty if valid)
+ */
+function validateFormData(formData, images) {
+  const errors = [];
+
+  // Validate title (required)
+  if (!formData.title || formData.title.trim() === '') {
+    errors.push('Title is required');
+  }
+
+  // Validate price (required and must be valid)
+  if (!formData.price || formData.price.trim() === '') {
+    errors.push('Price is required');
+  } else if (!isPriceValid(formData.price)) {
+    errors.push('Please enter a valid price (e.g., $19.99, USD 19.99, or 19.99)');
+  }
+
+  // Validate images (at least one required)
+  if (!images || images.length === 0) {
+    errors.push('At least one product image is required');
+  }
+
+  // Validate quantity (must be at least 1)
+  if (!formData.quantity || formData.quantity < 1) {
+    errors.push('Quantity must be at least 1');
+  }
+
+  return errors;
+}
+
+/**
+ * Check if price string is valid
+ * @param {string} price - Price string to validate
+ * @returns {boolean} - True if valid, false otherwise
+ */
+function isPriceValid(price) {
+  if (!price || typeof price !== 'string') {
+    return false;
+  }
+
+  // Remove currency symbols and common text
+  const cleaned = price.replace(/[^0-9.,]/g, '');
+
+  // Must have some digits
+  if (cleaned.length === 0) {
+    return false;
+  }
+
+  // Try to parse as number
+  const normalized = cleaned.replace(',', '.');
+  const num = parseFloat(normalized);
+
+  // Must be a valid positive number
+  return !isNaN(num) && num > 0;
+}
+
+/**
+ * Display validation errors in the modal
+ * @param {Array} errors - Array of error messages
+ * @param {HTMLElement} modal - Modal element
+ * @returns {boolean} - True if there are errors, false if valid
+ */
+function showValidationErrors(errors, modal) {
+  const errorBanner = modal.querySelector('#error-banner');
+
+  if (errors.length > 0) {
+    // Show error banner with all errors
+    errorBanner.innerHTML = `
+      <strong>⚠️ Please fix the following errors:</strong>
+      <ul style="margin: 8px 0 0 0; padding-left: 20px;">
+        ${errors.map(err => `<li>${err}</li>`).join('')}
+      </ul>
+    `;
+    errorBanner.style.display = 'block';
+
+    // Scroll to top so user sees the errors
+    modal.scrollTop = 0;
+
+    return true; // Has errors
+  } else {
+    // Hide error banner
+    errorBanner.style.display = 'none';
+    return false; // No errors
+  }
 }
