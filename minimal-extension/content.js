@@ -554,21 +554,29 @@ function extractJsonLdData() {
 
 /**
  * Global state management for modal
+ * Using window object to prevent redeclaration errors on multiple script injections
  */
-const modalState = {
-  images: [],
-  currentImageIndex: 0,
-  formData: {
-    title: '',
-    price: '',
-    quantity: 1,
-    category: 'General',
-    notes: '',
-    brand: '',
-    description: ''
-  },
-  scrapingMetadata: {}
-};
+if (!window.babylistModalState) {
+  window.babylistModalState = {
+    images: [],
+    currentImageIndex: 0,
+    formData: {
+      title: '',
+      price: '',
+      quantity: 1,
+      category: 'General',
+      notes: '',
+      brand: '',
+      description: ''
+    },
+    scrapingMetadata: {}
+  };
+}
+const modalState = window.babylistModalState;
+
+// Only define functions if not already defined (prevents redeclaration errors)
+if (!window.babylistExtensionLoaded) {
+  window.babylistExtensionLoaded = true;
 
 /**
  * Create enhanced modal UI with image carousel and editable form
@@ -576,7 +584,7 @@ const modalState = {
  * @param {Array} images - Array of image URLs
  * @returns {Object} - { backdrop, modal, images }
  */
-function createModalUI(productData, images = []) {
+window.createModalUI = function(productData, images = []) {
   // Ensure we have at least one image (use placeholder if needed)
   const imageList = images.length > 0 ? images : ['https://via.placeholder.com/400x400?text=No+Image'];
 
@@ -693,7 +701,7 @@ function createModalUI(productData, images = []) {
   document.body.appendChild(backdrop);
 
   return { backdrop, modal, images: imageList };
-}
+};
 
 /**
  * Setup image carousel navigation
@@ -701,7 +709,7 @@ function createModalUI(productData, images = []) {
  * @param {Array} images - Array of image URLs
  * @param {Object} state - Modal state object
  */
-function setupImageCarousel(modal, images, state) {
+window.setupImageCarousel = function(modal, images, state) {
   if (images.length <= 1) return;
 
   const currentImage = modal.querySelector('#current-image');
@@ -738,7 +746,7 @@ function setupImageCarousel(modal, images, state) {
       updateImage(parseInt(dot.dataset.index));
     });
   });
-}
+};
 
 /**
  * Setup event handlers for modal form and buttons
@@ -746,7 +754,7 @@ function setupImageCarousel(modal, images, state) {
  * @param {HTMLElement} backdrop - Backdrop element
  * @param {Object} state - Modal state object
  */
-function setupEventHandlers(modal, backdrop, state) {
+window.setupEventHandlers = function(modal, backdrop, state) {
   // Close handlers
   modal.querySelector('#close-modal').addEventListener('click', () => backdrop.remove());
   modal.querySelector('#cancel-btn').addEventListener('click', () => backdrop.remove());
@@ -794,7 +802,7 @@ function setupEventHandlers(modal, backdrop, state) {
     console.log('✅ Validation passed!');
     alert('Validation successful!\n\nExport functionality coming in Phase 3!\n\nCurrent data:\n' + JSON.stringify(state.formData, null, 2));
   });
-}
+};
 
 /**
  * FORM VALIDATION - Phase 2 Implementation
@@ -807,7 +815,7 @@ function setupEventHandlers(modal, backdrop, state) {
  * @param {Array} images - Array of image URLs
  * @returns {Array} - Array of error messages (empty if valid)
  */
-function validateFormData(formData, images) {
+window.validateFormData = function(formData, images) {
   const errors = [];
 
   // Validate title (required)
@@ -833,14 +841,14 @@ function validateFormData(formData, images) {
   }
 
   return errors;
-}
+};
 
 /**
  * Check if price string is valid
  * @param {string} price - Price string to validate
  * @returns {boolean} - True if valid, false otherwise
  */
-function isPriceValid(price) {
+window.isPriceValid = function(price) {
   if (!price || typeof price !== 'string') {
     return false;
   }
@@ -859,7 +867,7 @@ function isPriceValid(price) {
 
   // Must be a valid positive number
   return !isNaN(num) && num > 0;
-}
+};
 
 /**
  * Display validation errors in the modal
@@ -867,7 +875,7 @@ function isPriceValid(price) {
  * @param {HTMLElement} modal - Modal element
  * @returns {boolean} - True if there are errors, false if valid
  */
-function showValidationErrors(errors, modal) {
+window.showValidationErrors = function(errors, modal) {
   const errorBanner = modal.querySelector('#error-banner');
 
   if (errors.length > 0) {
@@ -889,4 +897,14 @@ function showValidationErrors(errors, modal) {
     errorBanner.style.display = 'none';
     return false; // No errors
   }
-}
+};
+
+} // End of if (!window.babylistExtensionLoaded)
+
+// Create convenience references to functions
+const createModalUI = window.createModalUI;
+const setupImageCarousel = window.setupImageCarousel;
+const setupEventHandlers = window.setupEventHandlers;
+const validateFormData = window.validateFormData;
+const isPriceValid = window.isPriceValid;
+const showValidationErrors = window.showValidationErrors;
