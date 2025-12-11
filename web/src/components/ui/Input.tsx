@@ -22,39 +22,39 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           >
             {label}
             {required && (
-              <span className="text-[var(--color-terracotta)] ms-1">*</span>
+              <span className="text-[var(--color-alert)] ms-1">*</span>
             )}
           </label>
         )}
-        <div className="relative">
+        <div className="flex items-center gap-3">
+          {icon && (
+            <span className="text-[var(--color-primary-light)] flex-shrink-0 w-5 h-5 flex items-center justify-center">
+              {icon}
+            </span>
+          )}
           <input
             ref={ref}
             id={inputId}
             className={clsx(
-              `w-full h-12 px-4
+              `flex-1 h-12
               text-[var(--color-text-primary)]
               bg-[var(--color-cream)]
               border rounded-xl
               transition-all duration-200
               placeholder:text-[var(--color-text-muted)]
               focus:outline-none focus:ring-2 focus:ring-offset-0
-              disabled:opacity-60 disabled:cursor-not-allowed`,
-              icon && 'ps-11',
+              disabled:opacity-60 disabled:cursor-not-allowed
+              px-6`,
               error
-                ? 'border-[var(--color-terracotta)] focus:ring-[var(--color-terracotta)]'
-                : 'border-[var(--color-border-light)] focus:border-[var(--color-chestnut)] focus:ring-[var(--color-chestnut)]',
+                ? 'border-[var(--color-alert)] focus:ring-[var(--color-alert)]'
+                : 'border-[var(--color-border-light)] focus:border-[var(--color-primary)] focus:ring-[var(--color-primary)]',
               className
             )}
             {...props}
           />
-          {icon && (
-            <span className="absolute start-4 top-1/2 -translate-y-1/2 text-[var(--color-text-muted)]">
-              {icon}
-            </span>
-          )}
         </div>
         {error && (
-          <p className="mt-1 text-xs text-[var(--color-terracotta)]">{error}</p>
+          <p className="mt-1 text-xs text-[var(--color-alert)]">{error}</p>
         )}
         {hint && !error && (
           <p className="mt-1 text-xs text-[var(--color-text-muted)]">{hint}</p>

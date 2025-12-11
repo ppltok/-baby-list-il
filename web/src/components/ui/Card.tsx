@@ -1,42 +1,20 @@
-import { forwardRef } from 'react'
-import type { HTMLAttributes } from 'react'
-import { clsx } from 'clsx'
+import * as React from "react"
 
-export interface CardProps extends HTMLAttributes<HTMLDivElement> {
-  variant?: 'default' | 'elevated' | 'bordered'
-  padding?: 'none' | 'sm' | 'md' | 'lg'
-}
+import { cn } from "@/lib/utils"
 
-export const Card = forwardRef<HTMLDivElement, CardProps>(
-  ({ className, variant = 'default', padding = 'md', children, ...props }, ref) => {
-    const variants = {
-      default: 'bg-white',
-      elevated: 'bg-white shadow-[0_4px_24px_rgba(149,69,53,0.12)]',
-      bordered: 'bg-white border border-[var(--color-border-light)]',
-    }
-
-    const paddings = {
-      none: '',
-      sm: 'p-4',
-      md: 'p-6',
-      lg: 'p-8',
-    }
-
-    return (
-      <div
+const Card = React.forwardRef<
+    HTMLDivElement,
+    React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+    <div
         ref={ref}
-        className={clsx(
-          'rounded-2xl',
-          variants[variant],
-          paddings[padding],
-          className
+        className={cn(
+            "rounded-xl border bg-card text-card-foreground shadow",
+            className
         )}
         {...props}
-      >
-        {children}
-      </div>
-    )
-  }
-)
+    />
+))
+Card.displayName = "Card"
 
-Card.displayName = 'Card'
+export { Card }

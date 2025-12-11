@@ -14,7 +14,7 @@ export function ProtectedRoute({ children, requireOnboarding = true }: Protected
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-[var(--color-cream)]">
-        <Loader2 className="w-8 h-8 animate-spin text-[var(--color-chestnut)]" />
+        <Loader2 className="w-8 h-8 animate-spin text-[var(--color-primary)]" />
       </div>
     )
   }
