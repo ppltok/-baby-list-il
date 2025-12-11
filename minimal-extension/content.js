@@ -572,7 +572,8 @@ if (!window.babylistModalState) {
     scrapingMetadata: {}
   };
 }
-const modalState = window.babylistModalState;
+// Use window reference directly to avoid redeclaration errors
+var modalState = window.babylistModalState;
 
 // Only define functions if not already defined (prevents redeclaration errors)
 if (!window.babylistExtensionLoaded) {
@@ -901,10 +902,10 @@ window.showValidationErrors = function(errors, modal) {
 
 } // End of if (!window.babylistExtensionLoaded)
 
-// Create convenience references to functions
-const createModalUI = window.createModalUI;
-const setupImageCarousel = window.setupImageCarousel;
-const setupEventHandlers = window.setupEventHandlers;
-const validateFormData = window.validateFormData;
-const isPriceValid = window.isPriceValid;
-const showValidationErrors = window.showValidationErrors;
+// Create convenience references to functions (use var to allow redeclaration)
+var createModalUI = window.createModalUI;
+var setupImageCarousel = window.setupImageCarousel;
+var setupEventHandlers = window.setupEventHandlers;
+var validateFormData = window.validateFormData;
+var isPriceValid = window.isPriceValid;
+var showValidationErrors = window.showValidationErrors;
