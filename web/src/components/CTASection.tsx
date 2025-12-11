@@ -47,8 +47,8 @@ export default function CTASection() {
                                     <div className="inline-flex w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full items-center justify-center mb-6 mx-auto">
                                         <Icon className="w-8 h-8 text-white" />
                                     </div>
-                                    <h3 className="text-xl font-bold text-foreground mb-2">{step.title}</h3>
-                                    <p className="text-muted-foreground">{step.description}</p>
+                                    <h3 className="text-xl font-bold text-foreground mb-2 text-center">{step.title}</h3>
+                                    <p className="text-muted-foreground text-center">{step.description}</p>
                                 </div>
                             </div>
                         )

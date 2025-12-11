@@ -44,7 +44,7 @@ export default function Features() {
                         return (
                             <div
                                 key={index}
-                                className="bg-white rounded-2xl p-8 border border-border hover:shadow-lg transition-shadow"
+                                className="bg-white rounded-2xl p-8 border border-border hover:shadow-lg transition-shadow text-right"
                             >
                                 <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 mb-4`}>
                                     <Icon className={`w-8 h-8 ${feature.color}`} />

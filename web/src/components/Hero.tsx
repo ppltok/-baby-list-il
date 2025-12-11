@@ -21,9 +21,9 @@ export default function Hero() {
                     </div>
 
                     {/* Content - Right side in RTL */}
-                    <div className="space-y-6 order-1 md:order-2">
+                    <div className="space-y-6 order-1 md:order-2 text-right">
                         <div className="space-y-4">
-                            <h2 className="text-5xl sm:text-6xl font-bold text-foreground leading-tight">
+                            <h2 className="text-5xl sm:text-6xl font-bold text-foreground leading-tight text-right">
                                 רשימת התינוק ש
                                 <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                                     גדלה עם המשפחה שלך

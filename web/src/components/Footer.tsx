@@ -4,14 +4,14 @@ export default function Footer() {
     return (
         <footer className="bg-foreground text-white py-16">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid md:grid-cols-4 gap-12 mb-12">
+                <div className="grid md:grid-cols-4 gap-12 mb-12 text-right">
                     {/* Brand */}
                     <div className="space-y-4">
                         <div className="flex items-center gap-2">
+                            <span className="text-xl font-bold">BabyList ישראל</span>
                             <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg">
                                 <Heart className="w-6 h-6 text-white fill-white" />
                             </div>
-                            <span className="text-xl font-bold">BabyList ישראל</span>
                         </div>
                         <p className="text-white/70 text-sm">פלטפורמת רשימת התינוק המלאה למשפחות ישראליות.</p>
                     </div>
