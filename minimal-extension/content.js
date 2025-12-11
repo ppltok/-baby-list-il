@@ -243,53 +243,38 @@ function extractJsonLdData() {
         console.log(JSON.stringify(simplifiedProduct, null, 2));
         console.log('========== END SIMPLIFIED DATA ==========\n');
 
-        // Create modal with simplified data
-        const modal = document.createElement('div');
-        modal.style.cssText = `
-          position: fixed;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          background: white;
-          padding: 20px;
-          border: 3px solid #333;
-          z-index: 999999;
-          max-width: 80%;
-          max-height: 80%;
-          overflow: auto;
-          box-shadow: 0 0 20px rgba(0,0,0,0.5);
-        `;
+        // *** ENHANCED MODAL UI (Phase 1) ***
+        // Prepare modal state
+        modalState.images = uniqueImageUrls.length > 0 ? uniqueImageUrls : [];
+        modalState.currentImageIndex = 0;
+        modalState.formData = {
+          title: simplifiedProduct.name || '',
+          price: simplifiedProduct.price || '',
+          quantity: 1,
+          category: simplifiedProduct.category || 'General',
+          notes: '',
+          brand: simplifiedProduct.brand || '',
+          description: ''
+        };
+        modalState.scrapingMetadata = {
+          method: 'json_ld_product',
+          source_url: window.location.href,
+          scraped_at: new Date().toISOString()
+        };
 
-        modal.innerHTML = `
-          <h3 style="margin-top: 0;">Product Data (Simplified)</h3>
-          <p>Select all the text below and copy it (Ctrl+A, Ctrl+C):</p>
-          <textarea readonly style="width: 100%; height: 400px; font-family: monospace; font-size: 12px; padding: 10px; border: 1px solid #ccc;">
-${JSON.stringify(simplifiedProduct, null, 2)}
-          </textarea>
-          <div style="margin-top: 10px;">
-            <button id="babylist-copy-btn" style="padding: 10px 20px; background: #4CAF50; color: white; border: none; cursor: pointer; font-size: 16px; margin-right: 10px;">
-              Copy to Clipboard
-            </button>
-            <button id="babylist-close-btn" style="padding: 10px 20px; background: #f44336; color: white; border: none; cursor: pointer; font-size: 16px;">
-              Close
-            </button>
-          </div>
-        `;
+        // Create enhanced modal with all data
+        const { backdrop, modal, images } = createModalUI({
+          name: simplifiedProduct.name,
+          price: simplifiedProduct.price,
+          priceCurrency: simplifiedProduct.priceCurrency,
+          brand: simplifiedProduct.brand
+        }, modalState.images);
 
-        document.body.appendChild(modal);
+        // Setup image carousel navigation
+        setupImageCarousel(modal, images, modalState);
 
-        // Add copy button functionality
-        document.getElementById('babylist-copy-btn').addEventListener('click', () => {
-          const textarea = modal.querySelector('textarea');
-          textarea.select();
-          document.execCommand('copy');
-          alert('JSON data copied to clipboard!');
-        });
-
-        // Add close button functionality
-        document.getElementById('babylist-close-btn').addEventListener('click', () => {
-          modal.remove();
-        });
+        // Setup all event handlers
+        setupEventHandlers(modal, backdrop, modalState);
 
         productData = data;
       } else if (data['@type'] === 'ProductGroup') {
@@ -353,53 +338,38 @@ ${JSON.stringify(simplifiedProduct, null, 2)}
           firstOffer: firstOffer
         };
 
-        // Create a modal with the JSON data
-        const modal = document.createElement('div');
-        modal.style.cssText = `
-          position: fixed;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          background: white;
-          padding: 20px;
-          border: 3px solid #333;
-          z-index: 999999;
-          max-width: 80%;
-          max-height: 80%;
-          overflow: auto;
-          box-shadow: 0 0 20px rgba(0,0,0,0.5);
-        `;
+        // *** ENHANCED MODAL UI (Phase 1) ***
+        // Prepare modal state
+        modalState.images = uniqueImageUrls.length > 0 ? uniqueImageUrls : [];
+        modalState.currentImageIndex = 0;
+        modalState.formData = {
+          title: simplifiedProduct.name || '',
+          price: simplifiedProduct.price || '',
+          quantity: 1,
+          category: simplifiedProduct.category || 'General',
+          notes: '',
+          brand: simplifiedProduct.brand || '',
+          description: ''
+        };
+        modalState.scrapingMetadata = {
+          method: 'json_ld_product_group',
+          source_url: window.location.href,
+          scraped_at: new Date().toISOString()
+        };
 
-        modal.innerHTML = `
-          <h3 style="margin-top: 0;">Product Data (Simplified)</h3>
-          <p>Select all the text below and copy it (Ctrl+A, Ctrl+C):</p>
-          <textarea readonly style="width: 100%; height: 400px; font-family: monospace; font-size: 12px; padding: 10px; border: 1px solid #ccc;">
-${JSON.stringify(simplifiedProduct, null, 2)}
-          </textarea>
-          <div style="margin-top: 10px;">
-            <button id="babylist-copy-btn" style="padding: 10px 20px; background: #4CAF50; color: white; border: none; cursor: pointer; font-size: 16px; margin-right: 10px;">
-              Copy to Clipboard
-            </button>
-            <button id="babylist-close-btn" style="padding: 10px 20px; background: #f44336; color: white; border: none; cursor: pointer; font-size: 16px;">
-              Close
-            </button>
-          </div>
-        `;
+        // Create enhanced modal with all data
+        const { backdrop, modal, images } = createModalUI({
+          name: simplifiedProduct.name,
+          price: simplifiedProduct.price,
+          priceCurrency: simplifiedProduct.priceCurrency,
+          brand: simplifiedProduct.brand
+        }, modalState.images);
 
-        document.body.appendChild(modal);
+        // Setup image carousel navigation
+        setupImageCarousel(modal, images, modalState);
 
-        // Add copy button functionality
-        document.getElementById('babylist-copy-btn').addEventListener('click', () => {
-          const textarea = modal.querySelector('textarea');
-          textarea.select();
-          document.execCommand('copy');
-          alert('JSON data copied to clipboard!');
-        });
-
-        // Add close button functionality
-        document.getElementById('babylist-close-btn').addEventListener('click', () => {
-          modal.remove();
-        });
+        // Setup all event handlers
+        setupEventHandlers(modal, backdrop, modalState);
 
         // Extract image from first variant
         let image = firstOffer?.image || data.image;
@@ -478,53 +448,38 @@ ${JSON.stringify(simplifiedProduct, null, 2)}
           console.log(JSON.stringify(simplifiedProduct, null, 2));
           console.log('========== END SIMPLIFIED DATA ==========\n');
 
-          // Create modal with simplified data
-          const modal = document.createElement('div');
-          modal.style.cssText = `
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            padding: 20px;
-            border: 3px solid #333;
-            z-index: 999999;
-            max-width: 80%;
-            max-height: 80%;
-            overflow: auto;
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
-          `;
+          // *** ENHANCED MODAL UI (Phase 1) ***
+          // Prepare modal state
+          modalState.images = uniqueImageUrls.length > 0 ? uniqueImageUrls : [];
+          modalState.currentImageIndex = 0;
+          modalState.formData = {
+            title: simplifiedProduct.name || '',
+            price: simplifiedProduct.price || '',
+            quantity: 1,
+            category: simplifiedProduct.category || 'General',
+            notes: '',
+            brand: simplifiedProduct.brand || '',
+            description: ''
+          };
+          modalState.scrapingMetadata = {
+            method: 'json_ld_graph',
+            source_url: window.location.href,
+            scraped_at: new Date().toISOString()
+          };
 
-          modal.innerHTML = `
-            <h3 style="margin-top: 0;">Product Data (Simplified)</h3>
-            <p>Select all the text below and copy it (Ctrl+A, Ctrl+C):</p>
-            <textarea readonly style="width: 100%; height: 400px; font-family: monospace; font-size: 12px; padding: 10px; border: 1px solid #ccc;">
-${JSON.stringify(simplifiedProduct, null, 2)}
-            </textarea>
-            <div style="margin-top: 10px;">
-              <button id="babylist-copy-btn" style="padding: 10px 20px; background: #4CAF50; color: white; border: none; cursor: pointer; font-size: 16px; margin-right: 10px;">
-                Copy to Clipboard
-              </button>
-              <button id="babylist-close-btn" style="padding: 10px 20px; background: #f44336; color: white; border: none; cursor: pointer; font-size: 16px;">
-                Close
-              </button>
-            </div>
-          `;
+          // Create enhanced modal with all data
+          const { backdrop, modal, images } = createModalUI({
+            name: simplifiedProduct.name,
+            price: simplifiedProduct.price,
+            priceCurrency: simplifiedProduct.priceCurrency,
+            brand: simplifiedProduct.brand
+          }, modalState.images);
 
-          document.body.appendChild(modal);
+          // Setup image carousel navigation
+          setupImageCarousel(modal, images, modalState);
 
-          // Add copy button functionality
-          document.getElementById('babylist-copy-btn').addEventListener('click', () => {
-            const textarea = modal.querySelector('textarea');
-            textarea.select();
-            document.execCommand('copy');
-            alert('JSON data copied to clipboard!');
-          });
-
-          // Add close button functionality
-          document.getElementById('babylist-close-btn').addEventListener('click', () => {
-            modal.remove();
-          });
+          // Setup all event handlers
+          setupEventHandlers(modal, backdrop, modalState);
 
           // Set productData for return
           productData = foundProduct;
@@ -583,4 +538,243 @@ ${JSON.stringify(simplifiedProduct, null, 2)}
 
   console.log('❌ No product data found on page');
   return null;
+}
+
+/**
+ * ENHANCED MODAL UI - Phase 1 Implementation
+ * =========================================
+ */
+
+/**
+ * Global state management for modal
+ */
+const modalState = {
+  images: [],
+  currentImageIndex: 0,
+  formData: {
+    title: '',
+    price: '',
+    quantity: 1,
+    category: 'General',
+    notes: '',
+    brand: '',
+    description: ''
+  },
+  scrapingMetadata: {}
+};
+
+/**
+ * Create enhanced modal UI with image carousel and editable form
+ * @param {Object} productData - Product data extracted from page
+ * @param {Array} images - Array of image URLs
+ * @returns {Object} - { backdrop, modal, images }
+ */
+function createModalUI(productData, images = []) {
+  // Ensure we have at least one image (use placeholder if needed)
+  const imageList = images.length > 0 ? images : ['https://via.placeholder.com/400x400?text=No+Image'];
+
+  // Format price with currency
+  const formattedPrice = productData.priceCurrency && productData.price
+    ? `${productData.priceCurrency} ${productData.price}`
+    : productData.price || '';
+
+  // Create backdrop
+  const backdrop = document.createElement('div');
+  backdrop.id = 'product-scraper-backdrop';
+  backdrop.style.cssText = `
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.6); z-index: 2147483646;
+    display: flex; align-items: center; justify-content: center;
+  `;
+
+  // Create modal container
+  const modal = document.createElement('div');
+  modal.id = 'product-scraper-modal';
+  modal.style.cssText = `
+    background: white; border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    max-width: 900px; width: 90vw; max-height: 90vh;
+    overflow-y: auto; z-index: 2147483647;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  `;
+
+  modal.innerHTML = `
+    <!-- Header -->
+    <div style="padding: 20px 24px; border-bottom: 1px solid #e5e7eb; display: flex; justify-content: space-between; align-items: center;">
+      <h2 style="margin: 0; font-size: 20px; color: #111827;">Add to Babylist</h2>
+      <button id="close-modal" style="border: none; background: none; font-size: 28px; cursor: pointer; color: #6b7280; line-height: 1;">&times;</button>
+    </div>
+
+    <!-- Error Banner (hidden by default) -->
+    <div id="error-banner" style="display: none; background: #fef3c7; border: 1px solid #f59e0b; padding: 12px; margin: 16px; border-radius: 6px; color: #92400e;"></div>
+
+    <!-- Main Content: Two-column layout -->
+    <div style="display: grid; grid-template-columns: 400px 1fr; gap: 24px; padding: 24px;">
+
+      <!-- Left Column: Image Gallery -->
+      <div>
+        <div id="image-gallery" style="position: relative; width: 400px; height: 400px; background: #f3f4f6; border-radius: 8px; overflow: hidden;">
+          <img id="current-image" src="${imageList[0]}" style="width: 100%; height: 100%; object-fit: contain;" alt="Product" />
+          ${imageList.length > 1 ? `
+            <button class="nav-btn prev-btn" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.9); border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">&lt;</button>
+            <button class="nav-btn next-btn" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.9); border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">&gt;</button>
+          ` : ''}
+        </div>
+        ${imageList.length > 1 ? `
+          <div id="image-pagination" style="display: flex; gap: 8px; justify-content: center; margin-top: 12px;">
+            ${imageList.map((_, i) => `<span class="pagination-dot ${i === 0 ? 'active' : ''}" data-index="${i}" style="width: 10px; height: 10px; border-radius: 50%; background: ${i === 0 ? '#7B3987' : '#d1d5db'}; cursor: pointer; transition: background 0.2s;"></span>`).join('')}
+          </div>
+        ` : ''}
+        <div style="margin-top: 8px; text-align: center; color: #6b7280; font-size: 14px;">
+          Selected Image
+        </div>
+      </div>
+
+      <!-- Right Column: Form Fields -->
+      <div>
+        <div class="form-group" style="margin-bottom: 16px;">
+          <label style="display: block; font-weight: 600; margin-bottom: 4px; color: #374151; font-size: 14px;">Title</label>
+          <input type="text" id="product-title" value="${productData.name || ''}" style="width: 100%; padding: 10px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 14px; box-sizing: border-box;" />
+        </div>
+
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 16px; margin-bottom: 16px;">
+          <div class="form-group">
+            <label style="display: block; font-weight: 600; margin-bottom: 4px; color: #374151; font-size: 14px;">Price</label>
+            <input type="text" id="product-price" value="${formattedPrice}" style="width: 100%; padding: 10px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 14px; box-sizing: border-box;" />
+          </div>
+          <div class="form-group">
+            <label style="display: block; font-weight: 600; margin-bottom: 4px; color: #374151; font-size: 14px;">Quantity</label>
+            <input type="number" id="product-quantity" value="1" min="1" style="width: 100%; padding: 10px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 14px; box-sizing: border-box;" />
+          </div>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 16px;">
+          <label style="display: block; font-weight: 600; margin-bottom: 4px; color: #374151; font-size: 14px;">Category</label>
+          <select id="product-category" style="width: 100%; padding: 10px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 14px; box-sizing: border-box;">
+            <option value="General">General</option>
+            <option value="Nursery">Nursery</option>
+            <option value="Feeding">Feeding</option>
+            <option value="Diapering">Diapering</option>
+            <option value="Clothing">Clothing</option>
+            <option value="Toys">Toys</option>
+            <option value="Health & Safety">Health & Safety</option>
+            <option value="Bath">Bath</option>
+            <option value="Gear">Gear</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group" style="margin-bottom: 16px;">
+          <label style="display: block; font-weight: 600; margin-bottom: 4px; color: #374151; font-size: 14px;">Note for friends and family</label>
+          <textarea id="product-notes" maxlength="500" placeholder="Optional notes..." style="width: 100%; padding: 10px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 14px; min-height: 100px; resize: vertical; box-sizing: border-box;"></textarea>
+          <div style="text-align: right; font-size: 12px; color: #6b7280; margin-top: 4px;">
+            <span id="notes-counter">0</span>/500 characters
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer: Buttons -->
+    <div style="display: flex; justify-content: space-between; padding: 20px 24px; border-top: 1px solid #e5e7eb;">
+      <button id="cancel-btn" style="padding: 12px 24px; border-radius: 6px; font-size: 16px; font-weight: 600; cursor: pointer; background: white; color: #374151; border: 1px solid #d1d5db;">Cancel</button>
+      <button id="export-btn" style="padding: 12px 24px; border-radius: 6px; font-size: 16px; font-weight: 600; cursor: pointer; background: #7B3987; color: white; border: none;">Export JSON</button>
+    </div>
+  `;
+
+  backdrop.appendChild(modal);
+  document.body.appendChild(backdrop);
+
+  return { backdrop, modal, images: imageList };
+}
+
+/**
+ * Setup image carousel navigation
+ * @param {HTMLElement} modal - Modal element
+ * @param {Array} images - Array of image URLs
+ * @param {Object} state - Modal state object
+ */
+function setupImageCarousel(modal, images, state) {
+  if (images.length <= 1) return;
+
+  const currentImage = modal.querySelector('#current-image');
+  const dots = modal.querySelectorAll('.pagination-dot');
+
+  function updateImage(index) {
+    state.currentImageIndex = index;
+    currentImage.src = images[index];
+    dots.forEach((dot, i) => {
+      dot.style.background = i === index ? '#7B3987' : '#d1d5db';
+      dot.classList.toggle('active', i === index);
+    });
+  }
+
+  const prevBtn = modal.querySelector('.prev-btn');
+  const nextBtn = modal.querySelector('.next-btn');
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      const newIndex = (state.currentImageIndex - 1 + images.length) % images.length;
+      updateImage(newIndex);
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      const newIndex = (state.currentImageIndex + 1) % images.length;
+      updateImage(newIndex);
+    });
+  }
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      updateImage(parseInt(dot.dataset.index));
+    });
+  });
+}
+
+/**
+ * Setup event handlers for modal form and buttons
+ * @param {HTMLElement} modal - Modal element
+ * @param {HTMLElement} backdrop - Backdrop element
+ * @param {Object} state - Modal state object
+ */
+function setupEventHandlers(modal, backdrop, state) {
+  // Close handlers
+  modal.querySelector('#close-modal').addEventListener('click', () => backdrop.remove());
+  modal.querySelector('#cancel-btn').addEventListener('click', () => backdrop.remove());
+  backdrop.addEventListener('click', (e) => {
+    if (e.target === backdrop) backdrop.remove();
+  });
+
+  // Form field handlers
+  modal.querySelector('#product-title').addEventListener('input', (e) => {
+    state.formData.title = e.target.value;
+  });
+
+  modal.querySelector('#product-price').addEventListener('input', (e) => {
+    state.formData.price = e.target.value;
+  });
+
+  modal.querySelector('#product-quantity').addEventListener('input', (e) => {
+    state.formData.quantity = parseInt(e.target.value) || 1;
+  });
+
+  modal.querySelector('#product-category').addEventListener('change', (e) => {
+    state.formData.category = e.target.value;
+  });
+
+  const notesField = modal.querySelector('#product-notes');
+  const notesCounter = modal.querySelector('#notes-counter');
+
+  notesField.addEventListener('input', (e) => {
+    state.formData.notes = e.target.value;
+    notesCounter.textContent = e.target.value.length;
+  });
+
+  // Export button handler (will be enhanced in Phase 3)
+  modal.querySelector('#export-btn').addEventListener('click', () => {
+    console.log('📤 Export clicked - Current state:', state);
+    // TODO: Add validation and export in Phase 2 & 3
+    alert('Export functionality coming in Phase 3!\n\nCurrent data:\n' + JSON.stringify(state.formData, null, 2));
+  });
 }
