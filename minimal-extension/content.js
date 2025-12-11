@@ -595,13 +595,14 @@ function createModalUI(productData, images = []) {
     box-shadow: 0 10px 40px rgba(0,0,0,0.3);
     max-width: 900px; width: 90vw; max-height: 90vh;
     overflow-y: auto; z-index: 2147483647;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    direction: rtl;
   `;
 
   modal.innerHTML = `
     <!-- Header -->
     <div style="padding: 20px 24px; border-bottom: 1px solid #e5e7eb; display: flex; justify-content: space-between; align-items: center;">
-      <h2 style="margin: 0; font-size: 20px; color: #111827;">Add to Babylist</h2>
+      <h2 style="margin: 0; font-size: 20px; color: #111827;">הוספה לרשימה</h2>
       <button id="close-modal" style="border: none; background: none; font-size: 28px; cursor: pointer; color: #6b7280; line-height: 1;">&times;</button>
     </div>
 
@@ -611,13 +612,13 @@ function createModalUI(productData, images = []) {
     <!-- Main Content: Two-column layout -->
     <div style="display: grid; grid-template-columns: 400px 1fr; gap: 24px; padding: 24px;">
 
-      <!-- Left Column: Image Gallery -->
+      <!-- Right Column: Image Gallery (RTL - appears on right) -->
       <div>
         <div id="image-gallery" style="position: relative; width: 400px; height: 400px; background: #f3f4f6; border-radius: 8px; overflow: hidden;">
           <img id="current-image" src="${imageList[0]}" style="width: 100%; height: 100%; object-fit: contain;" alt="Product" />
           ${imageList.length > 1 ? `
-            <button class="nav-btn prev-btn" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.9); border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">&lt;</button>
-            <button class="nav-btn next-btn" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.9); border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">&gt;</button>
+            <button class="nav-btn next-btn" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.9); border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">&gt;</button>
+            <button class="nav-btn prev-btn" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.9); border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">&lt;</button>
           ` : ''}
         </div>
         ${imageList.length > 1 ? `
@@ -626,49 +627,49 @@ function createModalUI(productData, images = []) {
           </div>
         ` : ''}
         <div style="margin-top: 8px; text-align: center; color: #6b7280; font-size: 14px;">
-          Selected Image
+          תמונה נבחרת
         </div>
       </div>
 
-      <!-- Right Column: Form Fields -->
+      <!-- Left Column: Form Fields (RTL - appears on left) -->
       <div>
         <div class="form-group" style="margin-bottom: 16px;">
-          <label style="display: block; font-weight: 600; margin-bottom: 4px; color: #374151; font-size: 14px;">Title</label>
+          <label style="display: block; font-weight: 600; margin-bottom: 4px; color: #374151; font-size: 14px;">כותרת</label>
           <input type="text" id="product-title" value="${productData.name || ''}" style="width: 100%; padding: 10px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 14px; box-sizing: border-box;" />
         </div>
 
         <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 16px; margin-bottom: 16px;">
           <div class="form-group">
-            <label style="display: block; font-weight: 600; margin-bottom: 4px; color: #374151; font-size: 14px;">Price</label>
+            <label style="display: block; font-weight: 600; margin-bottom: 4px; color: #374151; font-size: 14px;">מחיר</label>
             <input type="text" id="product-price" value="${formattedPrice}" style="width: 100%; padding: 10px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 14px; box-sizing: border-box;" />
           </div>
           <div class="form-group">
-            <label style="display: block; font-weight: 600; margin-bottom: 4px; color: #374151; font-size: 14px;">Quantity</label>
+            <label style="display: block; font-weight: 600; margin-bottom: 4px; color: #374151; font-size: 14px;">כמות</label>
             <input type="number" id="product-quantity" value="1" min="1" style="width: 100%; padding: 10px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 14px; box-sizing: border-box;" />
           </div>
         </div>
 
         <div class="form-group" style="margin-bottom: 16px;">
-          <label style="display: block; font-weight: 600; margin-bottom: 4px; color: #374151; font-size: 14px;">Category</label>
+          <label style="display: block; font-weight: 600; margin-bottom: 4px; color: #374151; font-size: 14px;">קטגוריה</label>
           <select id="product-category" style="width: 100%; padding: 10px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 14px; box-sizing: border-box;">
-            <option value="General">General</option>
-            <option value="Nursery">Nursery</option>
-            <option value="Feeding">Feeding</option>
-            <option value="Diapering">Diapering</option>
-            <option value="Clothing">Clothing</option>
-            <option value="Toys">Toys</option>
-            <option value="Health & Safety">Health & Safety</option>
-            <option value="Bath">Bath</option>
-            <option value="Gear">Gear</option>
-            <option value="Other">Other</option>
+            <option value="General">כללי</option>
+            <option value="Nursery">חדר ילדים</option>
+            <option value="Feeding">האכלה</option>
+            <option value="Diapering">החתלה</option>
+            <option value="Clothing">ביגוד</option>
+            <option value="Toys">צעצועים</option>
+            <option value="Health & Safety">בריאות ובטיחות</option>
+            <option value="Bath">אמבטיה</option>
+            <option value="Gear">ציוד</option>
+            <option value="Other">אחר</option>
           </select>
         </div>
 
         <div class="form-group" style="margin-bottom: 16px;">
-          <label style="display: block; font-weight: 600; margin-bottom: 4px; color: #374151; font-size: 14px;">Note for friends and family</label>
-          <textarea id="product-notes" maxlength="500" placeholder="Optional notes..." style="width: 100%; padding: 10px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 14px; min-height: 100px; resize: vertical; box-sizing: border-box;"></textarea>
-          <div style="text-align: right; font-size: 12px; color: #6b7280; margin-top: 4px;">
-            <span id="notes-counter">0</span>/500 characters
+          <label style="display: block; font-weight: 600; margin-bottom: 4px; color: #374151; font-size: 14px;">הערה לחברים ומשפחה</label>
+          <textarea id="product-notes" maxlength="500" placeholder="הערות אופציונליות..." style="width: 100%; padding: 10px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 14px; min-height: 100px; resize: vertical; box-sizing: border-box;"></textarea>
+          <div style="text-align: left; font-size: 12px; color: #6b7280; margin-top: 4px;">
+            <span id="notes-counter">0</span>/500 תווים
           </div>
         </div>
       </div>
@@ -676,8 +677,8 @@ function createModalUI(productData, images = []) {
 
     <!-- Footer: Buttons -->
     <div style="display: flex; justify-content: space-between; padding: 20px 24px; border-top: 1px solid #e5e7eb;">
-      <button id="cancel-btn" style="padding: 12px 24px; border-radius: 6px; font-size: 16px; font-weight: 600; cursor: pointer; background: white; color: #374151; border: 1px solid #d1d5db;">Cancel</button>
-      <button id="export-btn" style="padding: 12px 24px; border-radius: 6px; font-size: 16px; font-weight: 600; cursor: pointer; background: #7B3987; color: white; border: none;">Export JSON</button>
+      <button id="export-btn" style="padding: 12px 24px; border-radius: 6px; font-size: 16px; font-weight: 600; cursor: pointer; background: #7B3987; color: white; border: none;">ייצא JSON</button>
+      <button id="cancel-btn" style="padding: 12px 24px; border-radius: 6px; font-size: 16px; font-weight: 600; cursor: pointer; background: white; color: #374151; border: 1px solid #d1d5db;">ביטול</button>
     </div>
   `;
 
@@ -804,24 +805,24 @@ function validateFormData(formData, images) {
 
   // Validate title (required)
   if (!formData.title || formData.title.trim() === '') {
-    errors.push('Title is required');
+    errors.push('כותרת היא שדה חובה');
   }
 
   // Validate price (required and must be valid)
   if (!formData.price || formData.price.trim() === '') {
-    errors.push('Price is required');
+    errors.push('מחיר הוא שדה חובה');
   } else if (!isPriceValid(formData.price)) {
-    errors.push('Please enter a valid price (e.g., $19.99, USD 19.99, or 19.99)');
+    errors.push('נא להזין מחיר תקין (לדוגמה: ₪19.99, USD 19.99, או 19.99)');
   }
 
   // Validate images (at least one required)
   if (!images || images.length === 0) {
-    errors.push('At least one product image is required');
+    errors.push('נדרשת לפחות תמונה אחת של המוצר');
   }
 
   // Validate quantity (must be at least 1)
   if (!formData.quantity || formData.quantity < 1) {
-    errors.push('Quantity must be at least 1');
+    errors.push('הכמות חייבת להיות לפחות 1');
   }
 
   return errors;
@@ -865,8 +866,8 @@ function showValidationErrors(errors, modal) {
   if (errors.length > 0) {
     // Show error banner with all errors
     errorBanner.innerHTML = `
-      <strong>⚠️ Please fix the following errors:</strong>
-      <ul style="margin: 8px 0 0 0; padding-left: 20px;">
+      <strong>⚠️ נא לתקן את השגיאות הבאות:</strong>
+      <ul style="margin: 8px 0 0 0; padding-right: 20px; text-align: right;">
         ${errors.map(err => `<li>${err}</li>`).join('')}
       </ul>
     `;
