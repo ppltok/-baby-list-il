@@ -928,11 +928,11 @@ window.exportProductAsJSON = function(state) {
       description: state.formData.description || "",
       notes: state.formData.notes || ""
     },
-    images: state.images.map((url, index) => ({
-      url: url,
-      is_primary: index === state.currentImageIndex,
-      index: index
-    })),
+    images: [{
+      url: state.images[state.currentImageIndex],
+      is_primary: true,
+      index: state.currentImageIndex
+    }],
     scraping_metadata: state.scrapingMetadata
   };
 
