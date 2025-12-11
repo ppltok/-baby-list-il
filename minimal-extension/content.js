@@ -298,7 +298,19 @@ ${JSON.stringify(simplifiedProduct, null, 2)}
 
         // Get the first variant offer or default offer
         const offers = data.hasVariant || data.offers;
-        const firstOffer = Array.isArray(offers) ? offers[0] : offers;
+
+        // Prefer in-stock variants over out-of-stock ones
+        let firstOffer;
+        if (Array.isArray(offers)) {
+          // Find first in-stock variant
+          const inStockOffer = offers.find(offer =>
+            offer?.offers?.availability?.includes('InStock')
+          );
+          // Use in-stock if available, otherwise use first variant
+          firstOffer = inStockOffer || offers[0];
+        } else {
+          firstOffer = offers;
+        }
 
         // Collect all unique image URLs from all variants
         const imageUrls = [];

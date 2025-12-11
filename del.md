@@ -1,14 +1,5 @@
-accessibility.js:1 An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing.
-GetDefaultProp @ accessibility.js:1
-accessibility.js:1 [IND] You are running  Windows  Operating system,  Chrome  browser, version:  142
-accessibility.js:1 [IND] Version 5.0.9
-accessibility.js:1 Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://ams.creativecdn.com') does not match the recipient window's origin ('https://www.terminalx.com').
-postFrames @ accessibility.js:1
-accessibility.js:1 Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://ams.creativecdn.com') does not match the recipient window's origin ('https://www.terminalx.com').
-postFrames @ accessibility.js:1
-humanz-gtm.js:1 -I-
 content.js:11 🚀 Babylist API Tester - Starting...
-content.js:16 📍 Current Page URL: https://www.terminalx.com/kids-and-baby/z756010027?color=2148
+content.js:16 📍 Current Page URL: https://www.baby-star.co.il/products/65013
 content.js:19 📡 Calling Babylist API...
 content.js:118 🔗 Requesting API fetch from background script
 content.js:23 ✅ SUCCESS! Directives received from Babylist API
@@ -243,29 +234,143 @@ content.js:36 {
                 "result": "pric
 content.js:40 📊 Directive Analysis: {platform: 'Shopify', fields: Array(7), chainCount: 12, hasJsonLd: true, hasShopify: true, …}
 content.js:186 🔍 Searching for product data on page...
-content.js:191 Found 2 JSON-LD script(s)
-content.js:196 JSON-LD 1: {@context: 'https://schema.org', @type: 'WebSite', url: 'https://www.terminalx.com/', potentialAction: {…}}
-content.js:196 JSON-LD 2: {@context: 'https://schema.org', @type: 'סניקרס', image: 'https://media.terminalx.com/pub/media/catalog/prod…717492140.jpg?image_type_mobile=webp_jpeg_like_70', name: 'סניקרס קנבאס Chuck Taylor All Star Classic / בייבי בנים', description: 'נעלי סניקרס מבית Converse מדגם Chuck Taylor All St… סולייה שטוחה והדפסי לוגו על הלשונית ומאחור.\n<br>', …}
-content.js:515 🔍 Trying Shopify meta tags...
-content.js:525 ✅ Found product data in meta tags!
+content.js:191 Found 3 JSON-LD script(s)
+content.js:196 JSON-LD 1: {@context: 'https://schema.org', @type: 'BreadcrumbList', itemListElement: Array(5)}
+content.js:196 JSON-LD 2: {@context: 'http://schema.org', @type: 'Organization', name: 'בייביסטאר', logo: 'https://www.baby-star.co.il/cdn/shop/files/logo_1.png?v=1738574092&width=1144', sameAs: Array(9), …}
+content.js:196 JSON-LD 3: {@context: 'http://schema.org/', @id: '/products/65013#product', @type: 'ProductGroup', brand: {…}, category: 'עריסה', …}
+content.js:297 Found ProductGroup, extracting data...
+content.js:333 ========== SIMPLIFIED PRODUCT DATA ==========
+content.js:334 {
+  "name": "עריסה נצמדת למיטה נועה NOA",
+  "category": "עריסה",
+  "price": "1100.00",
+  "priceCurrency": "ILS",
+  "brand": "Sport line",
+  "imageUrls": [
+    "https://www.baby-star.co.il/cdn/shop/files/8_7ea834f3-5064-4bcf-89d5-88243d9b6be5.webp?v=1763544616&width=1920",
+    "https://www.baby-star.co.il/cdn/shop/files/Screenshot_3_bdf7c787-9b95-4f49-9149-c104571b373d.webp?v=1763544616&width=1920",
+    "https://www.baby-star.co.il/cdn/shop/files/ANP_4234_web.webp?v=1763544616&width=1920",
+    "https://www.baby-star.co.il/cdn/shop/files/ANP_4185_web.webp?v=1763544616&width=1920",
+    "https://www.baby-star.co.il/cdn/shop/files/ANP_4214_web.webp?v=1763544616&width=1920"
+  ]
+}
+content.js:335 ========== END SIMPLIFIED DATA ==========
+
+content.js:418 ========== EXTRACTED PRODUCT DATA ==========
+content.js:419 {
+  "@type": "Product",
+  "name": "עריסה נצמדת למיטה נועה NOA",
+  "brand": {
+    "@type": "Brand",
+    "name": "Sport line"
+  },
+  "category": "עריסה",
+  "description": "עריסה מעוצבת במגוון עיצובים חדשים נצמדת למיטת הורים.\nשלד מעוצב דמוי עץ / אפור/ שחור/בז מוברש עם מגוון ריפודים חדשים\nנצמדת למיטת הורים בעזרת רצועות קשירה לבטיחות מרבית.\nלעריסה 6 מצבי גובה הניתנים לשינוי ע\"פ צורך שימוש והתאמה לגובה מיטת ההורים.\nלעריסה גלגלים עם נעילה, מזרן עבה במיוחד, כילה מפוארת ומשטח אחסנה גדול במיוחד.",
+  "image": "https://www.baby-star.co.il/cdn/shop/files/8_7ea834f3-5064-4bcf-89d5-88243d9b6be5.webp?v=1763544616&width=1920",
+  "sku": "65013",
+  "url": "https://www.baby-star.co.il/products/65013",
+  "productGroupID": "7895672455215",
+  "offers": {
+    "price": "1100.00",
+    "priceCurrency": "ILS",
+    "availability": "http://schema.org/OutOfStock",
+    "url": "https://www.baby-star.co.il/products/65013?variant=43964906700847"
+  },
+  "variants": [
+    {
+      "@id": "/products/65013?variant=43964906700847#variant",
+      "@type": "Product",
+      "gtin": "7290113215139",
+      "image": "https://www.baby-star.co.il/cdn/shop/files/8_7ea834f3-5064-4bcf-89d5-88243d9b6be5.webp?v=1763544616&width=1920",
+      "name": "עריסה נצמדת למיטה נועה NOA - ריפוד בז' / שלד שמפניה",
+      "offers": {
+        "@id": "/products/65013?variant=43964906700847#offer",
+        "@type": "Offer",
+        "availability": "http://schema.org/OutOfStock",
+        "price": "1100.00",
+        "priceCurrency": "ILS",
+        "url": "https://www.baby-star.co.il/products/65013?variant=43964906700847"
+      },
+      "sku": "65013"
+    },
+    {
+      "@id": "/products/65013?variant=43964906733615#variant",
+      "@type": "Product",
+      "gtin": "7290113213357",
+      "image": "https://www.baby-star.co.il/cdn/shop/files/Screenshot_3_bdf7c787-9b95-4f49-9149-c104571b373d.webp?v=1763544616&width=1920",
+      "name": "עריסה נצמדת למיטה נועה NOA - ריפוד אפור / שלד אפור כהה",
+      "offers": {
+        "@id": "/products/65013?variant=43964906733615#offer",
+        "@type": "Offer",
+        "availability": "http://schema.org/OutOfStock",
+        "price": "899.00",
+        "priceCurrency": "ILS",
+        "url": "https://www.baby-star.co.il/products/65013?variant=43964906733615"
+      },
+      "sku": "91737"
+    },
+    {
+      "@id": "/products/65013?variant=44662929457199#variant",
+      "@type": "Product",
+      "gtin": "7290113215771",
+      "image": "https://www.baby-star.co.il/cdn/shop/files/ANP_4234_web.webp?v=1763544616&width=1920",
+      "name": "עריסה נצמדת למיטה נועה NOA - ריפוד לבן / שלד דמוי עץ",
+      "offers": {
+        "@id": "/products/65013?variant=44662929457199#offer",
+        "@type": "Offer",
+        "availability": "http://schema.org/InStock",
+        "price": "1190.00",
+        "priceCurrency": "ILS",
+        "url": "https://www.baby-star.co.il/products/65013?variant=44662929457199"
+      },
+      "sku": "40165122"
+    },
+    {
+      "@id": "/products/65013?variant=44662940434479#variant",
+      "@type": "Product",
+      "gtin": "7290113215320",
+      "image": "https://www.baby-star.co.il/cdn/shop/files/ANP_4185_web.webp?v=1763544616&width=1920",
+      "name": "עריסה נצמדת למיטה נועה NOA - ריפוד שחור / שלד שמפניה",
+      "offers": {
+        "@id": "/products/65013?variant=44662940434479#offer",
+        "@type": "Offer",
+        "availability": "http://schema.org/InStock",
+        "price": "1190.00",
+        "priceCurrency": "ILS",
+        "url": "https://www.baby-star.co.il/products/65013?variant=44662940434479"
+      },
+      "sku": "65128"
+    },
+    {
+      "@id": "/products/65013?variant=44662947020847#variant",
+      "@type": "Product",
+      "gtin": "7290113215634",
+      "image": "https://www.baby-star.co.il/cdn/shop/files/ANP_4214_web.webp?v=1763544616&width=1920",
+      "name": "עריסה נצמדת למיטה נועה NOA - ריפוד שחור / שלד רוזגולד",
+      "offers": {
+        "@id": "/products/65013?variant=44662947020847#offer",
+        "@type": "Offer",
+        "availability": "http://schema.org/InStock",
+        "price": "1190.00",
+        "priceCurrency": "ILS",
+        "url": "https://www.baby-star.co.il/products/65013?variant=44662947020847"
+      },
+      "sku": "40165121"
+    }
+  ]
+}
+content.js:420 ========== END EXTRACTED DATA ==========
+
+content.js:523 ✅ Found Product data in JSON-LD: {@type: 'Product', name: 'עריסה נצמדת למיטה נועה NOA', brand: {…}, category: 'עריסה', description: 'עריסה מעוצבת במגוון עיצובים חדשים נצמדת למיטת הורי… עבה במיוחד, כילה מפוארת ומשטח אחסנה גדול במיוחד.', …}
 content.js:63 🎁 ACTUAL PRODUCT DATA EXTRACTED FROM PAGE:
 content.js:64 ==========================================
-content.js:65 Product Name: כחול נייבי - סניקרס קנבאס Chuck Taylor All Star Classic / בייבי בנים - CONVERSE - TERMINAL X
-content.js:66 Price: 137.94 ILS
-content.js:67 Availability: in stock
-content.js:68 Brand: N/A
-content.js:69 SKU: N/A
-content.js:70 Category: N/A
-content.js:71 Image URL: https://media.terminalx.com/pub/media/catalog/product/cache/f112238e8de94b6d480bd02e7a9501b8/z/7/z756010027-11717492140.jpg?image_type_mobile=webp_jpeg_like_70
-content.js:72 Full product data: {@type: 'Product', name: 'כחול נייבי - סניקרס קנבאס Chuck Taylor All Star Classic / בייבי בנים - CONVERSE - TERMINAL X', offers: {…}, image: 'https://media.terminalx.com/pub/media/catalog/prod…717492140.jpg?image_type_mobile=webp_jpeg_like_70'}
+content.js:65 Product Name: עריסה נצמדת למיטה נועה NOA
+content.js:66 Price: 1100.00 ILS
+content.js:67 Availability: http://schema.org/OutOfStock
+content.js:68 Brand: Sport line
+content.js:69 SKU: 65013
+content.js:70 Category: עריסה
+content.js:71 Image URL: https://www.baby-star.co.il/cdn/shop/files/8_7ea834f3-5064-4bcf-89d5-88243d9b6be5.webp?v=1763544616&width=1920
+content.js:72 Full product data: {@type: 'Product', name: 'עריסה נצמדת למיטה נועה NOA', brand: {…}, category: 'עריסה', description: 'עריסה מעוצבת במגוון עיצובים חדשים נצמדת למיטת הורי… עבה במיוחד, כילה מפוארת ומשטח אחסנה גדול במיוחד.', …}
 content.js:73 ==========================================
 
-
-
-
-background.js:10 🎯 Extension icon clicked!
-background.js:11 📍 Current tab URL: https://www.terminalx.com/kids-and-baby/z756010027?color=2148
-background.js:35 📨 Message received in background: Object
-background.js:43 🔗 Fetching API from background: https://www.babylist.com/api/v3/scraper_directives?url=https%3A%2F%2Fwww.terminalx.com%2Fkids-and-baby%2Fz756010027%3Fcolor%3D2148
-background.js:60 ✅ API response received: Object
-background.js:27 ✅ Content script injected successfully
