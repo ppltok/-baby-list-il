@@ -199,6 +199,81 @@ function extractJsonLdData() {
       let productData = null;
 
       if (data['@type'] === 'Product') {
+        console.log('Found Product, extracting data...');
+
+        // Extract image URLs (handle both string and array)
+        const imageUrls = [];
+        if (data.image) {
+          if (Array.isArray(data.image)) {
+            imageUrls.push(...data.image);
+          } else {
+            imageUrls.push(data.image);
+          }
+        }
+        const uniqueImageUrls = [...new Set(imageUrls)];
+
+        // Create simplified product data
+        const simplifiedProduct = {
+          name: data.name || 'N/A',
+          category: data.category || 'N/A',
+          price: data.offers?.price || 'N/A',
+          priceCurrency: data.offers?.priceCurrency || 'N/A',
+          brand: data.brand?.name || data.brand || 'N/A',
+          imageUrls: uniqueImageUrls
+        };
+
+        console.log('========== SIMPLIFIED PRODUCT DATA ==========');
+        console.log(JSON.stringify(simplifiedProduct, null, 2));
+        console.log('========== END SIMPLIFIED DATA ==========\n');
+
+        // Create modal with simplified data
+        const modal = document.createElement('div');
+        modal.style.cssText = `
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background: white;
+          padding: 20px;
+          border: 3px solid #333;
+          z-index: 999999;
+          max-width: 80%;
+          max-height: 80%;
+          overflow: auto;
+          box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        `;
+
+        modal.innerHTML = `
+          <h3 style="margin-top: 0;">Product Data (Simplified)</h3>
+          <p>Select all the text below and copy it (Ctrl+A, Ctrl+C):</p>
+          <textarea readonly style="width: 100%; height: 400px; font-family: monospace; font-size: 12px; padding: 10px; border: 1px solid #ccc;">
+${JSON.stringify(simplifiedProduct, null, 2)}
+          </textarea>
+          <div style="margin-top: 10px;">
+            <button id="babylist-copy-btn" style="padding: 10px 20px; background: #4CAF50; color: white; border: none; cursor: pointer; font-size: 16px; margin-right: 10px;">
+              Copy to Clipboard
+            </button>
+            <button id="babylist-close-btn" style="padding: 10px 20px; background: #f44336; color: white; border: none; cursor: pointer; font-size: 16px;">
+              Close
+            </button>
+          </div>
+        `;
+
+        document.body.appendChild(modal);
+
+        // Add copy button functionality
+        document.getElementById('babylist-copy-btn').addEventListener('click', () => {
+          const textarea = modal.querySelector('textarea');
+          textarea.select();
+          document.execCommand('copy');
+          alert('JSON data copied to clipboard!');
+        });
+
+        // Add close button functionality
+        document.getElementById('babylist-close-btn').addEventListener('click', () => {
+          modal.remove();
+        });
+
         productData = data;
       } else if (data['@type'] === 'ProductGroup') {
         // ProductGroup contains product variants
