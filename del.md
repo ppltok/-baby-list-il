@@ -1,246 +1,271 @@
-{
-  "fullProductGroup": {
-    "@context": "http://schema.org/",
-    "@id": "/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1#product",
-    "@type": "ProductGroup",
-    "brand": {
-      "@type": "Brand",
-      "name": "שילב Shilav"
-    },
-    "category": "בגדי תינוקות וילדים",
-    "description": "חולצה ארוכה בצבע אפור פחם עם הדפס NYC.",
-    "hasVariant": [
+accessibility.js:1 An iframe which has both allow-scripts and allow-same-origin for its sandbox attribute can escape its sandboxing.
+GetDefaultProp @ accessibility.js:1
+accessibility.js:1 [IND] You are running  Windows  Operating system,  Chrome  browser, version:  142
+accessibility.js:1 [IND] Version 5.0.9
+accessibility.js:1 Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://ams.creativecdn.com') does not match the recipient window's origin ('https://www.terminalx.com').
+postFrames @ accessibility.js:1
+accessibility.js:1 Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://ams.creativecdn.com') does not match the recipient window's origin ('https://www.terminalx.com').
+postFrames @ accessibility.js:1
+humanz-gtm.js:1 -I-
+content.js:11 🚀 Babylist API Tester - Starting...
+content.js:16 📍 Current Page URL: https://www.terminalx.com/kids-and-baby/z756010027?color=2148
+content.js:19 📡 Calling Babylist API...
+content.js:118 🔗 Requesting API fetch from background script
+content.js:23 ✅ SUCCESS! Directives received from Babylist API
+content.js:24 📦 Full Response: {directives: Array(12)}
+content.js:27 📋 DIRECTIVES BREAKDOWN:
+content.js:28 ========================
+content.js:30 
+Directive 1: (10) [{…}, {…}, {…}, Array(2), Array(1), {…}, Array(3), Array(1), Array(2), {…}]
+content.js:30 
+Directive 2: (3) [Array(2), Array(1), {…}]
+content.js:30 
+Directive 3: {type: 'Chain', when: {…}, directives: Array(2)}
+content.js:30 
+Directive 4: {type: 'Chain', when: {…}, directives: Array(1)}
+content.js:30 
+Directive 5: {type: 'Chain', when: {…}, directives: Array(1)}
+content.js:30 
+Directive 6: {type: 'Chain', when: {…}, directives: Array(1)}
+content.js:30 
+Directive 7: [Array(1)]
+content.js:30 
+Directive 8: {type: 'Chain', when: {…}, directives: Array(1)}
+content.js:30 
+Directive 9: {type: 'Chain', when: {…}, directives: Array(1)}
+content.js:30 
+Directive 10: {type: 'Chain', when: {…}, directives: Array(2)}
+content.js:30 
+Directive 11: {type: 'Chain', when: {…}, directives: Array(1)}
+content.js:30 
+Directive 12: {type: 'RemoveEmptyResults', exceptedKeys: Array(4)}
+content.js:32 ========================
+
+content.js:35 📄 Full Response as JSON:
+content.js:36 {
+  "directives": [
+    [
       {
-        "@id": "/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874599593#variant",
-        "@type": "Product",
-        "image": "https://www.shilav.co.il/cdn/shop/files/XL-32600508708-A.jpg?v=1755419952&width=1920",
-        "name": "חולצה אפורה ארוכה עם הדפס - 6-12m",
-        "offers": {
-          "@id": "/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874599593#offer",
-          "@type": "Offer",
-          "availability": "http://schema.org/OutOfStock",
-          "price": "54.90",
-          "priceCurrency": "ILS",
-          "url": "https://www.shilav.co.il/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874599593"
+        "type": "Chain",
+        "when": {
+          "a": {
+            "ref": "jsonLdProduct"
+          },
+          "operator": "falsy"
         },
-        "sku": "3260050870812"
-      },
-      {
-        "@id": "/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874632361#variant",
-        "@type": "Product",
-        "image": "https://www.shilav.co.il/cdn/shop/files/XL-32600508708-A.jpg?v=1755419952&width=1920",
-        "name": "חולצה אפורה ארוכה עם הדפס - 12-18m",
-        "offers": {
-          "@id": "/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874632361#offer",
-          "@type": "Offer",
-          "availability": "http://schema.org/OutOfStock",
-          "price": "54.90",
-          "priceCurrency": "ILS",
-          "url": "https://www.shilav.co.il/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874632361"
-        },
-        "sku": "3260050870818"
-      },
-      {
-        "@id": "/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874665129#variant",
-        "@type": "Product",
-        "image": "https://www.shilav.co.il/cdn/shop/files/XL-32600508708-A.jpg?v=1755419952&width=1920",
-        "name": "חולצה אפורה ארוכה עם הדפס - 18-24m",
-        "offers": {
-          "@id": "/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874665129#offer",
-          "@type": "Offer",
-          "availability": "http://schema.org/OutOfStock",
-          "price": "54.90",
-          "priceCurrency": "ILS",
-          "url": "https://www.shilav.co.il/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874665129"
-        },
-        "sku": "3260050870824"
-      },
-      {
-        "@id": "/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874697897#variant",
-        "@type": "Product",
-        "image": "https://www.shilav.co.il/cdn/shop/files/XL-32600508708-A.jpg?v=1755419952&width=1920",
-        "name": "חולצה אפורה ארוכה עם הדפס - 2Y",
-        "offers": {
-          "@id": "/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874697897#offer",
-          "@type": "Offer",
-          "availability": "http://schema.org/InStock",
-          "price": "54.90",
-          "priceCurrency": "ILS",
-          "url": "https://www.shilav.co.il/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874697897"
-        },
-        "sku": "3260050870852"
+        "directives": [
+          {
+            "type": "JsonLdProduct",
+            "assign": {
+              "ref": "jsonLdProduct"
+            }
+          }
+        ]
       },
       {
-        "@id": "/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874730665#variant",
-        "@type": "Product",
-        "image": "https://www.shilav.co.il/cdn/shop/files/XL-32600508708-A.jpg?v=1755419952&width=1920",
-        "name": "חולצה אפורה ארוכה עם הדפס - 3Y",
-        "offers": {
-          "@id": "/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874730665#offer",
-          "@type": "Offer",
-          "availability": "http://schema.org/OutOfStock",
-          "price": "54.90",
-          "priceCurrency": "ILS",
-          "url": "https://www.shilav.co.il/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874730665"
+        "type": "Chain",
+        "when": {
+          "a": {
+            "ref": "jsonLdProduct"
+          },
+          "operator": "truthy"
         },
-        "sku": "3260050870853"
+        "directives": [
+          {
+            "type": "Dig",
+            "pathString": "offers",
+            "object": {
+              "ref": "jsonLdProduct"
+            },
+            "assign": {
+              "ref": "offers"
+            }
+          },
+          {
+            "type": "Chain",
+            "when": {
+              "a": {
+                "ref": "offers"
+              },
+              "operator": "truthy"
+            },
+            "directives": [
+              {
+                "type": "Chain",
+                "when": {
+                  "a": {
+                    "ref": "variantId"
+                  },
+                  "operator": "truthy"
+                },
+                "directives": [
+                  {
+                    "type": "Find",
+                    "array": {
+                      "ref": "offers"
+                    },
+                    "operator": "includes",
+                    "a": [
+                      {
+                        "type": "Dig",
+                        "pathString": "url",
+                        "object": {
+                          "ref": "_value"
+                        }
+                      }
+                    ],
+                    "b": [
+                      {
+                        "type": "Define",
+                        "value": {
+                          "ref": "variantId"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Define",
+                    "when": {
+                      "a": {
+                        "ref": "_prev"
+                      },
+                      "operator": "present"
+                    },
+                    "value": {
+                      "ref": "_prev"
+                    },
+                    "assign": {
+                      "ref": "offer"
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "Chain",
+                "when": {
+                  "a": {
+                    "ref": "variantId"
+                  },
+                  "operator": "falsy"
+                },
+                "directives": [
+                  {
+                    "type": "Dig",
+                    "pathString": "1",
+                    "object": {
+                      "ref": "offers"
+                    }
+                  },
+                  {
+                    "type": "Dig",
+                    "when": {
+                      "a": {
+                        "ref": "_prev"
+                      },
+                      "operator": "falsy"
+                    },
+                    "pathString": "0",
+                    "object": {
+                      "ref": "offers"
+                    }
+                  },
+                  {
+                    "type": "Define",
+                    "when": {
+                      "a": {
+                        "ref": "_prev"
+                      },
+                      "operator": "present"
+                    },
+                    "value": {
+                      "ref": "_prev"
+                    },
+                    "assign": {
+                      "ref": "offer"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       },
       {
-        "@id": "/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874763433#variant",
-        "@type": "Product",
-        "image": "https://www.shilav.co.il/cdn/shop/files/XL-32600508708-A.jpg?v=1755419952&width=1920",
-        "name": "חולצה אפורה ארוכה עם הדפס - 4Y",
-        "offers": {
-          "@id": "/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874763433#offer",
-          "@type": "Offer",
-          "availability": "http://schema.org/OutOfStock",
-          "price": "54.90",
-          "priceCurrency": "ILS",
-          "url": "https://www.shilav.co.il/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874763433"
+        "type": "Chain",
+        "when": {
+          "a": {
+            "ref": "jsonLdProduct"
+          },
+          "operator": "truthy"
         },
-        "sku": "3260050870854"
+        "directives": [
+          {
+            "type": "Chain",
+            "when": {
+              "a": {
+                "result": "title"
+              },
+              "operator": "falsy"
+            },
+            "directives": [
+              {
+                "type": "Dig",
+                "pathString": "title",
+                "object": {
+                  "ref": "jsonLdProduct"
+                }
+              },
+              {
+                "type": "Define",
+                "value": {
+                  "ref": "_prev"
+                },
+                "assign": {
+                  "result": "title"
+                },
+                "when": {
+                  "a": {
+                    "ref": "_prev"
+                  },
+                  "operator": "truthy"
+                }
+              }
+            ]
+          }
+        ]
       },
-      {
-        "@id": "/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874796201#variant",
-        "@type": "Product",
-        "image": "https://www.shilav.co.il/cdn/shop/files/XL-32600508708-A.jpg?v=1755419952&width=1920",
-        "name": "חולצה אפורה ארוכה עם הדפס - 5Y",
-        "offers": {
-          "@id": "/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874796201#offer",
-          "@type": "Offer",
-          "availability": "http://schema.org/OutOfStock",
-          "price": "54.90",
-          "priceCurrency": "ILS",
-          "url": "https://www.shilav.co.il/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874796201"
-        },
-        "sku": "3260050870855"
-      }
-    ],
-    "name": "חולצה אפורה ארוכה עם הדפס",
-    "productGroupID": "8687891972265",
-    "url": "https://www.shilav.co.il/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1"
-  },
-  "offers": [
-    {
-      "@id": "/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874599593#variant",
-      "@type": "Product",
-      "image": "https://www.shilav.co.il/cdn/shop/files/XL-32600508708-A.jpg?v=1755419952&width=1920",
-      "name": "חולצה אפורה ארוכה עם הדפס - 6-12m",
-      "offers": {
-        "@id": "/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874599593#offer",
-        "@type": "Offer",
-        "availability": "http://schema.org/OutOfStock",
-        "price": "54.90",
-        "priceCurrency": "ILS",
-        "url": "https://www.shilav.co.il/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874599593"
-      },
-      "sku": "3260050870812"
-    },
-    {
-      "@id": "/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874632361#variant",
-      "@type": "Product",
-      "image": "https://www.shilav.co.il/cdn/shop/files/XL-32600508708-A.jpg?v=1755419952&width=1920",
-      "name": "חולצה אפורה ארוכה עם הדפס - 12-18m",
-      "offers": {
-        "@id": "/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874632361#offer",
-        "@type": "Offer",
-        "availability": "http://schema.org/OutOfStock",
-        "price": "54.90",
-        "priceCurrency": "ILS",
-        "url": "https://www.shilav.co.il/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874632361"
-      },
-      "sku": "3260050870818"
-    },
-    {
-      "@id": "/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874665129#variant",
-      "@type": "Product",
-      "image": "https://www.shilav.co.il/cdn/shop/files/XL-32600508708-A.jpg?v=1755419952&width=1920",
-      "name": "חולצה אפורה ארוכה עם הדפס - 18-24m",
-      "offers": {
-        "@id": "/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874665129#offer",
-        "@type": "Offer",
-        "availability": "http://schema.org/OutOfStock",
-        "price": "54.90",
-        "priceCurrency": "ILS",
-        "url": "https://www.shilav.co.il/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874665129"
-      },
-      "sku": "3260050870824"
-    },
-    {
-      "@id": "/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874697897#variant",
-      "@type": "Product",
-      "image": "https://www.shilav.co.il/cdn/shop/files/XL-32600508708-A.jpg?v=1755419952&width=1920",
-      "name": "חולצה אפורה ארוכה עם הדפס - 2Y",
-      "offers": {
-        "@id": "/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874697897#offer",
-        "@type": "Offer",
-        "availability": "http://schema.org/InStock",
-        "price": "54.90",
-        "priceCurrency": "ILS",
-        "url": "https://www.shilav.co.il/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874697897"
-      },
-      "sku": "3260050870852"
-    },
-    {
-      "@id": "/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874730665#variant",
-      "@type": "Product",
-      "image": "https://www.shilav.co.il/cdn/shop/files/XL-32600508708-A.jpg?v=1755419952&width=1920",
-      "name": "חולצה אפורה ארוכה עם הדפס - 3Y",
-      "offers": {
-        "@id": "/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874730665#offer",
-        "@type": "Offer",
-        "availability": "http://schema.org/OutOfStock",
-        "price": "54.90",
-        "priceCurrency": "ILS",
-        "url": "https://www.shilav.co.il/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874730665"
-      },
-      "sku": "3260050870853"
-    },
-    {
-      "@id": "/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874763433#variant",
-      "@type": "Product",
-      "image": "https://www.shilav.co.il/cdn/shop/files/XL-32600508708-A.jpg?v=1755419952&width=1920",
-      "name": "חולצה אפורה ארוכה עם הדפס - 4Y",
-      "offers": {
-        "@id": "/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874763433#offer",
-        "@type": "Offer",
-        "availability": "http://schema.org/OutOfStock",
-        "price": "54.90",
-        "priceCurrency": "ILS",
-        "url": "https://www.shilav.co.il/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874763433"
-      },
-      "sku": "3260050870854"
-    },
-    {
-      "@id": "/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874796201#variant",
-      "@type": "Product",
-      "image": "https://www.shilav.co.il/cdn/shop/files/XL-32600508708-A.jpg?v=1755419952&width=1920",
-      "name": "חולצה אפורה ארוכה עם הדפס - 5Y",
-      "offers": {
-        "@id": "/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874796201#offer",
-        "@type": "Offer",
-        "availability": "http://schema.org/OutOfStock",
-        "price": "54.90",
-        "priceCurrency": "ILS",
-        "url": "https://www.shilav.co.il/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874796201"
-      },
-      "sku": "3260050870855"
-    }
-  ],
-  "firstOffer": {
-    "@id": "/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874599593#variant",
-    "@type": "Product",
-    "image": "https://www.shilav.co.il/cdn/shop/files/XL-32600508708-A.jpg?v=1755419952&width=1920",
-    "name": "חולצה אפורה ארוכה עם הדפס - 6-12m",
-    "offers": {
-      "@id": "/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874599593#offer",
-      "@type": "Offer",
-      "availability": "http://schema.org/OutOfStock",
-      "price": "54.90",
-      "priceCurrency": "ILS",
-      "url": "https://www.shilav.co.il/products/%D7%97%D7%95%D7%9C%D7%A6%D7%94-%D7%90%D7%A4%D7%95%D7%A8%D7%94-%D7%90%D7%A8%D7%95%D7%9B%D7%94-%D7%A2%D7%9D-%D7%94%D7%93%D7%A4%D7%A1?variant=46174874599593"
-    },
-    "sku": "3260050870812"
-  }
-}
-          
+      [
+        [
+          {
+            "type": "Chain",
+            "when": {
+              "a": {
+                "result": "pric
+content.js:40 📊 Directive Analysis: {platform: 'Shopify', fields: Array(7), chainCount: 12, hasJsonLd: true, hasShopify: true, …}
+content.js:186 🔍 Searching for product data on page...
+content.js:191 Found 2 JSON-LD script(s)
+content.js:196 JSON-LD 1: {@context: 'https://schema.org', @type: 'WebSite', url: 'https://www.terminalx.com/', potentialAction: {…}}
+content.js:196 JSON-LD 2: {@context: 'https://schema.org', @type: 'סניקרס', image: 'https://media.terminalx.com/pub/media/catalog/prod…717492140.jpg?image_type_mobile=webp_jpeg_like_70', name: 'סניקרס קנבאס Chuck Taylor All Star Classic / בייבי בנים', description: 'נעלי סניקרס מבית Converse מדגם Chuck Taylor All St… סולייה שטוחה והדפסי לוגו על הלשונית ומאחור.\n<br>', …}
+content.js:515 🔍 Trying Shopify meta tags...
+content.js:525 ✅ Found product data in meta tags!
+content.js:63 🎁 ACTUAL PRODUCT DATA EXTRACTED FROM PAGE:
+content.js:64 ==========================================
+content.js:65 Product Name: כחול נייבי - סניקרס קנבאס Chuck Taylor All Star Classic / בייבי בנים - CONVERSE - TERMINAL X
+content.js:66 Price: 137.94 ILS
+content.js:67 Availability: in stock
+content.js:68 Brand: N/A
+content.js:69 SKU: N/A
+content.js:70 Category: N/A
+content.js:71 Image URL: https://media.terminalx.com/pub/media/catalog/product/cache/f112238e8de94b6d480bd02e7a9501b8/z/7/z756010027-11717492140.jpg?image_type_mobile=webp_jpeg_like_70
+content.js:72 Full product data: {@type: 'Product', name: 'כחול נייבי - סניקרס קנבאס Chuck Taylor All Star Classic / בייבי בנים - CONVERSE - TERMINAL X', offers: {…}, image: 'https://media.terminalx.com/pub/media/catalog/prod…717492140.jpg?image_type_mobile=webp_jpeg_like_70'}
+content.js:73 ==========================================
+
+
+
+
+background.js:10 🎯 Extension icon clicked!
+background.js:11 📍 Current tab URL: https://www.terminalx.com/kids-and-baby/z756010027?color=2148
+background.js:35 📨 Message received in background: Object
+background.js:43 🔗 Fetching API from background: https://www.babylist.com/api/v3/scraper_directives?url=https%3A%2F%2Fwww.terminalx.com%2Fkids-and-baby%2Fz756010027%3Fcolor%3D2148
+background.js:60 ✅ API response received: Object
+background.js:27 ✅ Content script injected successfully

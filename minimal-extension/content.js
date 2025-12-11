@@ -198,7 +198,13 @@ function extractJsonLdData() {
       // Check if it's a Product or ProductGroup
       let productData = null;
 
-      if (data['@type'] === 'Product') {
+      // List of non-product types to skip
+      const nonProductTypes = ['WebSite', 'Organization', 'BreadcrumbList', 'WebPage', 'SearchAction'];
+
+      // Check if it's a product-like object (has name and offers, and isn't a known non-product type)
+      const isProductLike = data.name && data.offers && !nonProductTypes.includes(data['@type']);
+
+      if (data['@type'] === 'Product' || (isProductLike && data['@type'] !== 'ProductGroup')) {
         console.log('Found Product, extracting data...');
 
         // Extract image URLs (handle both string and array)
@@ -212,12 +218,23 @@ function extractJsonLdData() {
         }
         const uniqueImageUrls = [...new Set(imageUrls)];
 
+        // Extract price with multiple fallbacks
+        let price = 'N/A';
+        let priceCurrency = 'N/A';
+
+        if (data.offers) {
+          // Handle array of offers
+          const offer = Array.isArray(data.offers) ? data.offers[0] : data.offers;
+          price = offer?.price || offer?.lowPrice || offer?.highPrice || 'N/A';
+          priceCurrency = offer?.priceCurrency || 'N/A';
+        }
+
         // Create simplified product data
         const simplifiedProduct = {
           name: data.name || 'N/A',
           category: data.category || 'N/A',
-          price: data.offers?.price || 'N/A',
-          priceCurrency: data.offers?.priceCurrency || 'N/A',
+          price: price,
+          priceCurrency: priceCurrency,
           brand: data.brand?.name || data.brand || 'N/A',
           imageUrls: uniqueImageUrls
         };
@@ -403,24 +420,102 @@ ${JSON.stringify(simplifiedProduct, null, 2)}
         console.log('========== END EXTRACTED DATA ==========\n');
       } else if (data['@graph']) {
         // Check if product is in @graph array
-        productData = data['@graph'].find(item =>
+        const foundProduct = data['@graph'].find(item =>
           item['@type'] === 'Product' || item['@type'] === 'ProductGroup'
         );
 
-        // If ProductGroup found in @graph, extract it
-        if (productData && productData['@type'] === 'ProductGroup') {
-          const offers = productData.hasVariant || productData.offers;
-          const firstOffer = Array.isArray(offers) ? offers[0] : offers;
+        if (foundProduct) {
+          console.log('Found Product in @graph, extracting data...');
 
-          productData = {
-            '@type': 'Product',
-            name: productData.name,
-            brand: productData.brand,
-            category: productData.category,
-            image: productData.image,
-            sku: productData.sku || firstOffer?.sku,
-            offers: firstOffer
+          // Extract image URLs (handle both string and array)
+          const imageUrls = [];
+          if (foundProduct.image) {
+            if (Array.isArray(foundProduct.image)) {
+              imageUrls.push(...foundProduct.image);
+            } else {
+              imageUrls.push(foundProduct.image);
+            }
+          }
+          const uniqueImageUrls = [...new Set(imageUrls)];
+
+          // Handle both Product and ProductGroup in @graph
+          let price = 'N/A';
+          let priceCurrency = 'N/A';
+
+          if (foundProduct['@type'] === 'ProductGroup') {
+            const offers = foundProduct.hasVariant || foundProduct.offers;
+            const firstOffer = Array.isArray(offers) ? offers[0] : offers;
+            price = firstOffer?.offers?.price || firstOffer?.price || 'N/A';
+            priceCurrency = firstOffer?.offers?.priceCurrency || firstOffer?.priceCurrency || 'N/A';
+          } else {
+            price = foundProduct.offers?.price || 'N/A';
+            priceCurrency = foundProduct.offers?.priceCurrency || 'N/A';
+          }
+
+          // Create simplified product data
+          const simplifiedProduct = {
+            name: foundProduct.name || 'N/A',
+            category: foundProduct.category || 'N/A',
+            price: price,
+            priceCurrency: priceCurrency,
+            brand: foundProduct.brand?.name || foundProduct.brand || 'N/A',
+            imageUrls: uniqueImageUrls
           };
+
+          console.log('========== SIMPLIFIED PRODUCT DATA (@graph) ==========');
+          console.log(JSON.stringify(simplifiedProduct, null, 2));
+          console.log('========== END SIMPLIFIED DATA ==========\n');
+
+          // Create modal with simplified data
+          const modal = document.createElement('div');
+          modal.style.cssText = `
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border: 3px solid #333;
+            z-index: 999999;
+            max-width: 80%;
+            max-height: 80%;
+            overflow: auto;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+          `;
+
+          modal.innerHTML = `
+            <h3 style="margin-top: 0;">Product Data (Simplified)</h3>
+            <p>Select all the text below and copy it (Ctrl+A, Ctrl+C):</p>
+            <textarea readonly style="width: 100%; height: 400px; font-family: monospace; font-size: 12px; padding: 10px; border: 1px solid #ccc;">
+${JSON.stringify(simplifiedProduct, null, 2)}
+            </textarea>
+            <div style="margin-top: 10px;">
+              <button id="babylist-copy-btn" style="padding: 10px 20px; background: #4CAF50; color: white; border: none; cursor: pointer; font-size: 16px; margin-right: 10px;">
+                Copy to Clipboard
+              </button>
+              <button id="babylist-close-btn" style="padding: 10px 20px; background: #f44336; color: white; border: none; cursor: pointer; font-size: 16px;">
+                Close
+              </button>
+            </div>
+          `;
+
+          document.body.appendChild(modal);
+
+          // Add copy button functionality
+          document.getElementById('babylist-copy-btn').addEventListener('click', () => {
+            const textarea = modal.querySelector('textarea');
+            textarea.select();
+            document.execCommand('copy');
+            alert('JSON data copied to clipboard!');
+          });
+
+          // Add close button functionality
+          document.getElementById('babylist-close-btn').addEventListener('click', () => {
+            modal.remove();
+          });
+
+          // Set productData for return
+          productData = foundProduct;
         }
       }
 
