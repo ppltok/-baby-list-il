@@ -788,7 +788,7 @@ window.setupEventHandlers = function(modal, backdrop, state) {
     notesCounter.textContent = e.target.value.length;
   });
 
-  // Export button handler (with validation - Phase 2)
+  // Export button handler (Phase 3 - Full Export)
   modal.querySelector('#export-btn').addEventListener('click', () => {
     console.log('📤 Export clicked - Current state:', state);
 
@@ -799,9 +799,9 @@ window.setupEventHandlers = function(modal, backdrop, state) {
       return; // Has errors, don't proceed
     }
 
-    // TODO: Export functionality in Phase 3
-    console.log('✅ Validation passed!');
-    alert('Validation successful!\n\nExport functionality coming in Phase 3!\n\nCurrent data:\n' + JSON.stringify(state.formData, null, 2));
+    // Export JSON to new tab
+    console.log('✅ Validation passed! Exporting JSON...');
+    exportProductAsJSON(state);
   });
 };
 
@@ -900,6 +900,94 @@ window.showValidationErrors = function(errors, modal) {
   }
 };
 
+/**
+ * JSON EXPORT - Phase 3 Implementation
+ * =====================================
+ */
+
+/**
+ * Export product data as JSON to new browser tab
+ * @param {Object} state - Modal state containing all product data
+ */
+window.exportProductAsJSON = function(state) {
+  const jsonData = {
+    metadata: {
+      exported_at: new Date().toISOString(),
+      extension_version: "1.0.0",
+      source_url: window.location.href,
+      domain: window.location.hostname
+    },
+    product: {
+      title: state.formData.title,
+      price: state.formData.price,
+      price_numeric: parsePriceToNumber(state.formData.price),
+      currency: detectCurrency(state.formData.price),
+      quantity: parseInt(state.formData.quantity) || 1,
+      category: state.formData.category,
+      brand: state.formData.brand || "",
+      description: state.formData.description || "",
+      notes: state.formData.notes || ""
+    },
+    images: state.images.map((url, index) => ({
+      url: url,
+      is_primary: index === state.currentImageIndex,
+      index: index
+    })),
+    scraping_metadata: state.scrapingMetadata
+  };
+
+  openJSONInNewTab(jsonData);
+
+  // Show success message
+  console.log('✅ JSON exported successfully:', jsonData);
+
+  // Close modal
+  document.getElementById('product-scraper-backdrop')?.remove();
+};
+
+/**
+ * Open JSON data in new browser tab
+ * @param {Object} jsonData - JSON data to display
+ */
+window.openJSONInNewTab = function(jsonData) {
+  const json = JSON.stringify(jsonData, null, 2);
+  const dataUrl = 'data:application/json;charset=utf-8,' + encodeURIComponent(json);
+  window.open(dataUrl, '_blank');
+};
+
+/**
+ * Parse price string to numeric value
+ * @param {string} priceString - Price string to parse
+ * @returns {number} - Numeric price value
+ */
+window.parsePriceToNumber = function(priceString) {
+  if (!priceString) return 0;
+  const cleaned = priceString.replace(/[^0-9.,]/g, '');
+  const normalized = cleaned.replace(',', '.');
+  return parseFloat(normalized) || 0;
+};
+
+/**
+ * Detect currency from price string
+ * @param {string} priceString - Price string to analyze
+ * @returns {string} - Currency code (USD, EUR, ILS, etc.)
+ */
+window.detectCurrency = function(priceString) {
+  if (!priceString) return 'USD';
+  if (priceString.includes('$')) return 'USD';
+  if (priceString.includes('€')) return 'EUR';
+  if (priceString.includes('£')) return 'GBP';
+  if (priceString.includes('₪')) return 'ILS';
+  if (priceString.includes('¥')) return 'JPY';
+  if (priceString.includes('₹')) return 'INR';
+  // Check for currency codes
+  if (priceString.includes('USD')) return 'USD';
+  if (priceString.includes('EUR')) return 'EUR';
+  if (priceString.includes('GBP')) return 'GBP';
+  if (priceString.includes('ILS')) return 'ILS';
+  return 'USD'; // Default
+};
+
 } // End of if (!window.babylistExtensionLoaded)
 
 // Create convenience references to functions (use var to allow redeclaration)
@@ -909,3 +997,7 @@ var setupEventHandlers = window.setupEventHandlers;
 var validateFormData = window.validateFormData;
 var isPriceValid = window.isPriceValid;
 var showValidationErrors = window.showValidationErrors;
+var exportProductAsJSON = window.exportProductAsJSON;
+var openJSONInNewTab = window.openJSONInNewTab;
+var parsePriceToNumber = window.parsePriceToNumber;
+var detectCurrency = window.detectCurrency;
