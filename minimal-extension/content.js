@@ -208,7 +208,41 @@ function extractJsonLdData() {
         const offers = data.hasVariant || data.offers;
         const firstOffer = Array.isArray(offers) ? offers[0] : offers;
 
-        // Create debug data object
+        // Collect all unique image URLs from all variants
+        const imageUrls = [];
+        if (Array.isArray(data.hasVariant)) {
+          data.hasVariant.forEach(variant => {
+            if (variant.image) {
+              // Handle both string and array images
+              if (Array.isArray(variant.image)) {
+                imageUrls.push(...variant.image);
+              } else {
+                imageUrls.push(variant.image);
+              }
+            }
+          });
+        }
+        // Remove duplicates
+        const uniqueImageUrls = [...new Set(imageUrls)];
+
+        // Extract offers data from first variant for price
+        const variantOffers = firstOffer?.offers;
+
+        // Create simplified product data with only requested fields
+        const simplifiedProduct = {
+          name: data.name || 'N/A',
+          category: data.category || 'N/A',
+          price: variantOffers?.price || 'N/A',
+          priceCurrency: variantOffers?.priceCurrency || 'N/A',
+          brand: data.brand?.name || data.brand || 'N/A',
+          imageUrls: uniqueImageUrls
+        };
+
+        console.log('========== SIMPLIFIED PRODUCT DATA ==========');
+        console.log(JSON.stringify(simplifiedProduct, null, 2));
+        console.log('========== END SIMPLIFIED DATA ==========\n');
+
+        // Create debug data object (keep for reference)
         const debugData = {
           fullProductGroup: data,
           offers: offers,
@@ -233,10 +267,10 @@ function extractJsonLdData() {
         `;
 
         modal.innerHTML = `
-          <h3 style="margin-top: 0;">ProductGroup JSON Data</h3>
+          <h3 style="margin-top: 0;">Product Data (Simplified)</h3>
           <p>Select all the text below and copy it (Ctrl+A, Ctrl+C):</p>
           <textarea readonly style="width: 100%; height: 400px; font-family: monospace; font-size: 12px; padding: 10px; border: 1px solid #ccc;">
-${JSON.stringify(debugData, null, 2)}
+${JSON.stringify(simplifiedProduct, null, 2)}
           </textarea>
           <div style="margin-top: 10px;">
             <button id="babylist-copy-btn" style="padding: 10px 20px; background: #4CAF50; color: white; border: none; cursor: pointer; font-size: 16px; margin-right: 10px;">
@@ -268,9 +302,6 @@ ${JSON.stringify(debugData, null, 2)}
         if (Array.isArray(image)) {
           image = image[0];
         }
-
-        // Extract offers data from first variant
-        const variantOffers = firstOffer?.offers;
 
         productData = {
           '@type': 'Product',
