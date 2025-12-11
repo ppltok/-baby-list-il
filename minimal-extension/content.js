@@ -951,8 +951,18 @@ window.exportProductAsJSON = function(state) {
  */
 window.openJSONInNewTab = function(jsonData) {
   const json = JSON.stringify(jsonData, null, 2);
-  const dataUrl = 'data:application/json;charset=utf-8,' + encodeURIComponent(json);
-  window.open(dataUrl, '_blank');
+
+  // Create a Blob instead of data URL (Chrome blocks data URLs in top frame)
+  const blob = new Blob([json], { type: 'application/json' });
+  const blobUrl = URL.createObjectURL(blob);
+
+  // Open in new tab
+  const newWindow = window.open(blobUrl, '_blank');
+
+  // Revoke the blob URL after a short delay to free memory
+  setTimeout(() => {
+    URL.revokeObjectURL(blobUrl);
+  }, 1000);
 };
 
 /**
