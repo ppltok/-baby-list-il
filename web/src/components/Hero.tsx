@@ -37,8 +37,8 @@ export default function Hero() {
                         <div className="flex flex-col sm:flex-row gap-4">
                             <Link to={ctaLink}>
                                 <Button className="h-12 px-8 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-full w-full sm:w-auto">
-                                    <ArrowLeft className="w-5 h-5 ml-2" />
                                     {user ? "לרשימה שלי" : "התחילו רשימת תינוק"}
+                                    <ArrowLeft className="w-5 h-5 mr-2" />
                                 </Button>
                             </Link>
                             <Button

@@ -68,11 +68,11 @@ export default function RegistryCategories({ items, onTogglePurchased, onDeleteI
 
                     return (
                         <div key={category.id}>
-                            <div className="flex items-center gap-3 mb-4">
-                                <h2 className="text-xl font-bold text-foreground">{category.name}</h2>
+                            <div className="flex items-center gap-3 mb-4 justify-end">
                                 <div className={`p-2 rounded-lg bg-gradient-to-br ${category.color}`}>
                                     <IconComponent className="w-5 h-5 text-white" />
                                 </div>
+                                <h2 className="text-xl font-bold text-foreground">{category.name}</h2>
                             </div>
 
                             <div className="grid gap-3">

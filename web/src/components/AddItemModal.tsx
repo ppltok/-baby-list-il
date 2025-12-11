@@ -113,43 +113,43 @@ export default function AddItemModal({ isOpen, onClose, onAddItem }: AddItemModa
                         <div className="space-y-3 pt-2">
                             {/* Most Wanted */}
                             <label className="flex items-center justify-between p-3 bg-muted rounded-xl cursor-pointer hover:bg-muted/80 transition-colors">
-                                <div className="flex items-center gap-3">
-                                    <Star className={`w-5 h-5 ${mostWanted ? "text-yellow-500 fill-yellow-500" : "text-muted-foreground"}`} />
-                                    <div>
-                                        <p className="font-medium text-foreground">הכי רוצה</p>
-                                        <p className="text-xs text-muted-foreground">סמן פריטים שאתם הכי רוצים לקבל</p>
-                                    </div>
-                                </div>
                                 <div
                                     className={`w-11 h-6 rounded-full transition-colors relative ${mostWanted ? "bg-primary" : "bg-border"
                                         }`}
                                     onClick={() => setMostWanted(!mostWanted)}
                                 >
                                     <div
-                                        className={`absolute top-1 w-4 h-4 bg-white rounded-full transition-transform ${mostWanted ? "translate-x-6" : "translate-x-1"
+                                        className={`absolute top-1 w-4 h-4 bg-white rounded-full transition-transform ${mostWanted ? "translate-x-1" : "translate-x-6"
                                             }`}
                                     />
+                                </div>
+                                <div className="flex items-center gap-3">
+                                    <div className="text-right">
+                                        <p className="font-medium text-foreground">הכי רוצה</p>
+                                        <p className="text-xs text-muted-foreground">סמן פריטים שאתם הכי רוצים לקבל</p>
+                                    </div>
+                                    <Star className={`w-5 h-5 ${mostWanted ? "text-yellow-500 fill-yellow-500" : "text-muted-foreground"}`} />
                                 </div>
                             </label>
 
                             {/* Private */}
                             <label className="flex items-center justify-between p-3 bg-muted rounded-xl cursor-pointer hover:bg-muted/80 transition-colors">
-                                <div className="flex items-center gap-3">
-                                    <Lock className={`w-5 h-5 ${isPrivate ? "text-primary" : "text-muted-foreground"}`} />
-                                    <div>
-                                        <p className="font-medium text-foreground">פרטי</p>
-                                        <p className="text-xs text-muted-foreground">לא יוצג לאורחים חיצוניים</p>
-                                    </div>
-                                </div>
                                 <div
                                     className={`w-11 h-6 rounded-full transition-colors relative ${isPrivate ? "bg-primary" : "bg-border"
                                         }`}
                                     onClick={() => setIsPrivate(!isPrivate)}
                                 >
                                     <div
-                                        className={`absolute top-1 w-4 h-4 bg-white rounded-full transition-transform ${isPrivate ? "translate-x-6" : "translate-x-1"
+                                        className={`absolute top-1 w-4 h-4 bg-white rounded-full transition-transform ${isPrivate ? "translate-x-1" : "translate-x-6"
                                             }`}
                                     />
+                                </div>
+                                <div className="flex items-center gap-3">
+                                    <div className="text-right">
+                                        <p className="font-medium text-foreground">פרטי</p>
+                                        <p className="text-xs text-muted-foreground">לא יוצג לאורחים חיצוניים</p>
+                                    </div>
+                                    <Lock className={`w-5 h-5 ${isPrivate ? "text-primary" : "text-muted-foreground"}`} />
                                 </div>
                             </label>
                         </div>

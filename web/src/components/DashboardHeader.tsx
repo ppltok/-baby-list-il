@@ -78,16 +78,16 @@ export default function DashboardHeader({
                             onClick={onAddClick}
                             className="flex-1 bg-white text-primary hover:bg-white/90"
                         >
+                            <Plus className="w-4 h-4 ml-2" />
                             הוסף פריט
-                            <Plus className="w-4 h-4 mr-2" />
                         </Button>
                         <Button
                             onClick={onShareClick}
                             variant="secondary"
                             className="flex-1 bg-white/20 hover:bg-white/30 text-white border-0"
                         >
+                            <Share2 className="w-4 h-4 ml-2" />
                             שתף רשימה
-                            <Share2 className="w-4 h-4 mr-2" />
                         </Button>
                     </div>
                 </div>
