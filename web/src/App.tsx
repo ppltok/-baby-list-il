@@ -10,6 +10,8 @@ import { Home } from './pages/Home'
 import { SignIn, SignUp, AuthCallback } from './pages/auth'
 import { Onboarding } from './pages/onboarding'
 import { Dashboard } from './pages/Dashboard'
+import { PublicRegistry } from './pages/PublicRegistry'
+import { Settings } from './pages/Settings'
 
 // Initialize i18n
 import './i18n/config'
@@ -58,6 +60,18 @@ function AppRoutes() {
             </ProtectedRoute>
           }
         />
+
+        <Route
+          path="/settings"
+          element={
+            <ProtectedRoute>
+              <Settings />
+            </ProtectedRoute>
+          }
+        />
+
+        {/* Public Registry View */}
+        <Route path="/registry/:slug" element={<PublicRegistry />} />
 
         {/* Catch all - redirect to home */}
         <Route path="*" element={<Navigate to="/" replace />} />
