@@ -1,11 +1,12 @@
 import { Button } from "@/components/ui/button"
-import { Plus, Share2, LogOut, Bell } from "lucide-react"
+import { Plus, Share2, LogOut, Bell, Settings } from "lucide-react"
 import { Link } from "react-router-dom"
 
 interface DashboardHeaderProps {
     onAddClick: () => void
     onShareClick: () => void
     onSignOut: () => void
+    onSettingsClick?: () => void
     totalItems: number
     purchasedItems: number
     userName?: string
@@ -16,6 +17,7 @@ export default function DashboardHeader({
     onAddClick,
     onShareClick,
     onSignOut,
+    onSettingsClick,
     totalItems,
     purchasedItems,
     userName = "משתמש",
@@ -44,6 +46,11 @@ export default function DashboardHeader({
                         <Button onClick={onSignOut} variant="ghost" size="icon" className="text-white hover:bg-white/20">
                             <LogOut className="w-5 h-5" />
                         </Button>
+                        {onSettingsClick && (
+                            <Button onClick={onSettingsClick} variant="ghost" size="icon" className="text-white hover:bg-white/20">
+                                <Settings className="w-5 h-5" />
+                            </Button>
+                        )}
                         <Button variant="ghost" size="icon" className="text-white hover:bg-white/20">
                             <Bell className="w-5 h-5" />
                         </Button>
