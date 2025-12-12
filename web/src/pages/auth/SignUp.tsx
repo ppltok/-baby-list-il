@@ -86,7 +86,7 @@ export function SignUp() {
                 type="text"
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
-                className="w-full px-4 py-3 bg-muted border border-transparent rounded-xl focus:bg-background focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
+                className="w-full px-4 py-3 bg-white border border-gray-300 rounded-xl focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all"
                 required
               />
             </div>
@@ -97,7 +97,7 @@ export function SignUp() {
                 type="text"
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
-                className="w-full px-4 py-3 bg-muted border border-transparent rounded-xl focus:bg-background focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
+                className="w-full px-4 py-3 bg-white border border-gray-300 rounded-xl focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all"
                 required
               />
             </div>
@@ -110,7 +110,7 @@ export function SignUp() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="your@email.com"
-              className="w-full px-4 py-3 bg-muted border border-transparent rounded-xl focus:bg-background focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
+              className="w-full px-4 py-3 bg-white border border-gray-300 rounded-xl focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all"
               required
               dir="ltr"
             />
@@ -123,7 +123,7 @@ export function SignUp() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="••••••••"
-              className="w-full px-4 py-3 bg-muted border border-transparent rounded-xl focus:bg-background focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
+              className="w-full px-4 py-3 bg-white border border-gray-300 rounded-xl focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all"
               required
               minLength={6}
               dir="ltr"

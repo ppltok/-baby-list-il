@@ -75,7 +75,7 @@ export default function AddItemModal({ isOpen, onClose, onAddItem }: AddItemModa
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
                                 placeholder="לדוגמה: עריסה, עגלה, תיק החתלה"
-                                className="w-full px-4 py-3 bg-muted border border-transparent rounded-xl focus:bg-background focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
+                                className="w-full px-4 py-3 bg-white border border-gray-300 rounded-xl focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all"
                                 required
                             />
                         </div>
@@ -86,7 +86,7 @@ export default function AddItemModal({ isOpen, onClose, onAddItem }: AddItemModa
                             <select
                                 value={category}
                                 onChange={(e) => setCategory(e.target.value)}
-                                className="w-full px-4 py-3 bg-muted border border-transparent rounded-xl focus:bg-background focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
+                                className="w-full px-4 py-3 bg-white border border-gray-300 rounded-xl focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all"
                             >
                                 {CATEGORIES.map((cat) => (
                                     <option key={cat.id} value={cat.id}>
@@ -104,7 +104,7 @@ export default function AddItemModal({ isOpen, onClose, onAddItem }: AddItemModa
                                 value={url}
                                 onChange={(e) => setUrl(e.target.value)}
                                 placeholder="https://example.com/product"
-                                className="w-full px-4 py-3 bg-muted border border-transparent rounded-xl focus:bg-background focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
+                                className="w-full px-4 py-3 bg-white border border-gray-300 rounded-xl focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30 transition-all"
                                 dir="ltr"
                             />
                         </div>

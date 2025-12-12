@@ -67,9 +67,9 @@ export default function DashboardHeader({
                         <span className="text-sm">{purchasedItems}/{totalItems} פריטים</span>
                         <span className="font-medium">התקדמות הרשימה</span>
                     </div>
-                    <div className="w-full bg-white/20 rounded-full h-3 overflow-hidden mb-4">
+                    <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden mb-4">
                         <div
-                            className="bg-white h-full transition-all duration-500 rounded-full"
+                            className="bg-primary h-full transition-all duration-500 rounded-full"
                             style={{ width: `${progressPercent}%` }}
                         />
                     </div>
