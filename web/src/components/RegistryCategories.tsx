@@ -47,9 +47,9 @@ export default function RegistryCategories({ items, onTogglePurchased, onDeleteI
                             <p className="text-xs text-muted-foreground mb-3">
                                 {purchasedCount}/{categoryItems.length} פריטים
                             </p>
-                            <div className="w-full bg-muted rounded-full h-2 overflow-hidden">
+                            <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
                                 <div
-                                    className={`bg-gradient-to-r ${category.color} h-full transition-all duration-500`}
+                                    className="bg-primary h-full transition-all duration-500"
                                     style={{ width: `${progressPercent}%` }}
                                 />
                             </div>

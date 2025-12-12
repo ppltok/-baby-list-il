@@ -30,6 +30,16 @@
   --chart-4: oklch(0.7 0.15 150);
   --chart-5: oklch(0.6 0.15 280);
   --radius: 0.875rem;
+  /* Input styling variables */
+  --color-cream: oklch(1 0 0);
+  --color-border-light: oklch(0.85 0.01 260);
+  --color-text-primary: oklch(0.2 0.02 260);
+  --color-text-muted: oklch(0.55 0.02 260);
+  --color-primary-light: oklch(0.5 0.15 340);
+  --color-alert: oklch(0.577 0.245 27.325);
+  /* Progress bar colors */
+  --progress-bg: oklch(0.92 0.01 260);
+  --progress-fill: oklch(0.5 0.15 340);
   --sidebar: oklch(0.98 0.01 55);
   --sidebar-foreground: oklch(0.2 0.02 260);
   --sidebar-primary: oklch(0.65 0.2 340);
@@ -60,6 +70,16 @@
   --border: oklch(0.35 0.02 260);
   --input: oklch(0.28 0.02 260);
   --ring: oklch(0.75 0.2 340);
+  /* Input styling variables - dark mode */
+  --color-cream: oklch(0.22 0.02 260);
+  --color-border-light: oklch(0.4 0.02 260);
+  --color-text-primary: oklch(0.95 0.01 55);
+  --color-text-muted: oklch(0.65 0.02 55);
+  --color-primary-light: oklch(0.75 0.15 340);
+  --color-alert: oklch(0.65 0.2 25);
+  /* Progress bar colors - dark mode */
+  --progress-bg: oklch(0.35 0.02 260);
+  --progress-fill: oklch(0.75 0.15 340);
   --chart-1: oklch(0.7 0.2 340);
   --chart-2: oklch(0.75 0.15 200);
   --chart-3: oklch(0.8 0.18 35);

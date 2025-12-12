@@ -38,16 +38,16 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             className={clsx(
               `flex-1 h-12
               text-[var(--color-text-primary)]
-              bg-[var(--color-cream)]
-              border rounded-xl
+              bg-white
+              border border-gray-300 rounded-xl
               transition-all duration-200
               placeholder:text-[var(--color-text-muted)]
-              focus:outline-none focus:ring-2 focus:ring-offset-0
+              focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary
               disabled:opacity-60 disabled:cursor-not-allowed
               px-6`,
               error
-                ? 'border-[var(--color-alert)] focus:ring-[var(--color-alert)]'
-                : 'border-[var(--color-border-light)] focus:border-[var(--color-primary)] focus:ring-[var(--color-primary)]',
+                ? 'border-[var(--color-alert)] focus:ring-[var(--color-alert)]/30'
+                : '',
               className
             )}
             {...props}

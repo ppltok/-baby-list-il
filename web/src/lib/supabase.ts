@@ -22,7 +22,7 @@ export const signInWithGoogle = async () => {
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
     options: {
-      redirectTo: `${import.meta.env.VITE_APP_URL}/auth/callback`,
+      redirectTo: `${window.location.origin}/auth/callback`,
     },
   })
   return { data, error }
@@ -46,7 +46,7 @@ export const signUpWithEmail = async (
     password,
     options: {
       data: metadata,
-      emailRedirectTo: `${import.meta.env.VITE_APP_URL}/auth/callback`,
+      emailRedirectTo: `${window.location.origin}/auth/callback`,
     },
   })
   return { data, error }
@@ -59,7 +59,7 @@ export const signOut = async () => {
 
 export const resetPassword = async (email: string) => {
   const { data, error } = await supabase.auth.resetPasswordForEmail(email, {
-    redirectTo: `${import.meta.env.VITE_APP_URL}/auth/reset-password`,
+    redirectTo: `${window.location.origin}/auth/reset-password`,
   })
   return { data, error }
 }
